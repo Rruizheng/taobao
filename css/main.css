@@ -1,0 +1,70 @@
+/*header-cover*/
+.header-cover{
+	width: 100%;
+	height: 145px;
+	position: absolute;
+	top: 0;
+}
+
+/*top-info*/
+.header-cover .top-info{
+	margin: 0 auto;
+	width: 1190px;
+	height: 36px;
+	line-height: 36px;
+}
+
+/*top-left*/
+.top-left{
+	float: left;
+}
+.top-left li{
+	display: inline;
+}
+/*top-right*/
+.top-right{
+	float: right;
+}
+.top-right li{
+	display: inline;
+}
+
+
+/*.top-ad*/
+.top-ad{
+	width: 100%;
+	height: 99px;
+	background: rgb(155,47,255) url(../img/top-bg.png) no-repeat center center;
+}
+.top-ad-cover{
+	width: 1190px;
+	height: 99px;
+	margin: 0 auto;
+}
+.top-ad-cover a{
+	display: inline-block;
+}
+.main-entry{
+	float: left;
+	width: 118px;
+	height: 99px;
+}
+.main-entry img{
+	position: relative;
+	top:10px;
+}
+.list-f1{
+	float: left;
+}
+.list-f1 a{
+	width: 200px;
+	height: 78px;
+	margin-left: 7px;
+	margin-top: 10px;
+}
+.white-box{
+	height: 10px;
+	width: 1190px;
+	margin: 0 auto;
+	background: #FFF;
+}

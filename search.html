@@ -1,0 +1,363 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>搜索框</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<style>
+			/* 搜索框 */
+			.search	{
+				width: 1190px;
+				height: 140px;
+				background: #FFF;
+				margin: 0 auto;
+				display: block;
+				position: relative;
+			}
+			.search .logo{
+				width: 190px;
+				height: 140px;
+				float: left;
+			}
+			
+			.search .search-box{
+				display: block;
+				margin-left: 258px;
+				margin-right: 302px;
+				width: 630px;
+				height: 87px;
+				position: absolute;
+				top: 26px;
+			}
+			.search .search-nav{
+				position: relative;
+				left: 16px;
+				width: 613px;
+				height: 22px;
+				display: block;
+			}
+			.search .search-nav li{
+				text-align: center;
+				display: inline-block;
+				width: 36px;
+				height: 22px;
+				line-height: 22px;
+				color: F40;
+				margin-right: 4px;
+				cursor: pointer;
+			}
+			.search .search-nav li:hover{
+				color:#FF5400;
+				background: #FFEEE5;
+			}
+			.search .search-nav li.selected{
+				color: #FFF;
+				font-weight: 700;
+				background:linear-gradient(to right,#ff9000 0,#ff5000 100%) repeat-x;
+				border-radius: 6px 6px 0 0;
+			}
+			
+			.search-box .search-boxf{
+				width: 628px;
+				height: 36px;
+				border: solid 2px #ff5000;
+				border-radius: 20px;	
+				display: block;
+				position: relative;
+			}
+			
+		
+			.search-box .search-boxf .search-input{
+				width: 554px;
+				height: 36px;
+				position: relative;
+				left: 0;
+				display: inline-block;
+			}
+			.search-box .search-boxf .search-input input{
+				width: 472px;
+				height: 36px;
+				line-height: 36px;
+				border: none;
+				outline: 0;
+				padding-bottom: 6px 0;
+				background: transparent;
+				font: 12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+				position: absolute;
+				left: 10px;
+				
+			}
+			.search-box .search-boxf .search-phone{
+				width: 24px;
+				height: 36px;
+				display: inline-block;
+				position: absolute;
+				right: 20px;
+				top: 8px;
+				cursor: pointer;
+			}
+			
+			.search-box .search-boxf .search-btn{
+				display: inline-block;
+				width: 74px;
+				height: 40px;
+				position: absolute;
+				top: -2px;
+			}
+			.search-box .search-boxf .search-btn button{
+				width: 100%;
+				height: 100%;
+				font-size: 18px;
+				color: #fff;
+				font-weight: 700;
+				background-color: #FF4200;
+				background-image: linear-gradient(to right,#ff9000 0,#ff5000 100%);
+				background-repeat: repeat-x;
+				border: none;
+				border-radius: 0 20px 20px 0;
+				cursor: pointer;
+			}
+			.search-box .search-boxf .search-img{
+				width: 16px;
+				height: 24px;
+				position: absolute;
+				left: 12px;
+				top: 10px;
+			}
+			
+			/*热搜链接*/
+			.search-box .search-hots{
+				display: block;
+				width: 630px;
+				height: 25px;
+				position: relative;
+				padding-top: 6px;
+			}
+			.search-box .search-hots div{
+				display: none;
+			}
+			.search-box .search-hots div.selected{
+				display: block;
+			}
+			.search-box .search-hots a{
+				cursor: pointer;
+				height: 18px;
+				line-height: 18px;
+				margin-right: 8px;
+				margin-bottom: 5px;
+				white-space: nowrap;
+				float: left;
+			}
+			.search-box .search-hots div a.readmore{
+				width: 36px;
+				height: 19px;
+				float: right;	
+			}
+			
+			/*淘宝二维码*/
+			.search .qrcode{
+				width: 76px;
+				height: 90px;
+				display: block;
+				position: relative;
+				left: 1004px;
+				top: 24px;
+				background: green;
+			}
+			
+			.search .qrcode .qrcode-pic{
+				width: 74px;
+				height: 88px;
+				border: 1px solid #eee;
+				background: #FFF;
+				display: block;
+				cursor: pointer;
+			}
+			.search .qrcode .qrcode-pic:before,.qrcode-pic:after{
+				content:"";
+				display: table;
+			}
+			.search .qrcode .qrcode-pic:after{
+				height: 0;
+				line-height: 0;
+				visibility: visible;
+				clear: both;
+			}
+			.search .qrcode .qrcode-pic span{
+				height: 20px;
+				line-height: 20px;
+				text-align: center;
+				width: 78px;
+				display: inline-block;
+				color: red;
+				margin: 3px 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.search .qrcode .qrcode-pic img{
+				width: 62px;
+				height: 62px;
+				position: absolute;
+				top: 24px;
+				left: 7px;
+			}
+			
+			/*关闭二维码*/
+			.search .qrcode .qrcode-close{
+				width: 14px;
+				height: 14px;
+				cursor: pointer;
+				display: block;
+				border: 1px solid #eee;
+				position: absolute;
+				text-align: center;
+				top: 0;
+				left: -16px;
+			}
+			
+			/*两侧背景*/
+			.bg{
+				position: relative;
+				background: red;
+			}
+			.left-bg,.right-bg{
+				width: 240px;
+				height: 800px;
+				z-index:3;
+			}
+			.left-bg{
+				position: absolute;
+				display: block;
+				top: 0;
+				left:0;
+			}
+			.right-bg{
+				position: absolute;
+				display: block;
+				top: 0;
+				left:1190px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="search">
+			<div class="bg">
+				<img class="left-bg" src="img/left-bg.png" alt="" />
+				<img class="right-bg" src="img/right-bg.png" alt="" />
+			</div>
+			<div class="logo">
+       		 <a href="https://pages.tmall.com/wow/act/18920/main-102367?wh_weex=true">   
+       		 	<img src="img/logo.gif" height="140" width="190" alt="">
+       		</a>
+    	</div>
+			<div class="search-box">
+		        <div class="search-bd">
+		            <ul class="search-nav">
+		                <li class="selected">宝贝</li>
+		                <li>天猫</li>
+		                <li>店铺</li>
+		            </ul>
+		        </div>
+		        <div class="search-boxf">
+		        	<div class="search-input">
+		        		<input type="text" placeholder="     ins书包双肩"/>
+				        <div class="search-phone">
+				        		<img src="img/相机.png" style="width: 24px;height: 20px;"/>
+			       		 </div>	
+		        	</div>
+		        	
+		        	<div class="search-btn">
+		        		<button>搜索</button>
+		        	</div>
+		        	
+		        	<i class="search-img">
+		        		<img src="img/搜索.png" style="width: 16px;height: 16px;"/>
+		        	</i>
+		        	
+		        </div>
+		        <div class="search-hots">
+		            <div class="baobei selected">
+		            	<a href="#">新款连衣裙</a>
+		            	<a href="#">四件套</a>
+		            	<a href="#" style="color: red;">潮流T恤</a>
+		            	<a href="#">时尚女鞋</a>
+		            	<a href="#">短裤</a>
+		            	<a href="#">半身裙</a>
+		            	<a href="#">男士外套</a>
+		            	<a href="#">墙纸</a>
+		            	<a href="#">行车记录仪</a>
+		            	<a href="#">新款男鞋</a>
+		            	<a href="#">耳机</a>
+		            	<a href="#" class="readmore">更多></a>
+		            </div>
+		            <div class="tianmao">
+		            	<a href="#">针织衫</a>
+		            	<a href="#" style="color: red;">羽绒服</a>
+		            	<a href="#">四件套</a>
+		            	<a href="#" style="color: red;">扫地机器人</a>
+		            	<a href="#">客厅灯</a>
+		            	<a href="#">男士毛衣</a>
+		            	<a href="#" style="color: red;">女鞋</a>
+		            	<a href="#">双肩包</a>
+		            	<a href="#" style="color: red;">打底裤</a>
+		            	<a href="#">文胸</a>
+		            	<a href="#">行车记录仪</a>
+		            	<a href="#" style="color: red;">面膜</a>
+		            	<a href="#">牛奶</a>
+		            </div>
+		            <div class="dianpu">
+		            	<a href="#">新款连衣裙</a>
+		            	<a href="#">四件套</a>
+		            	<a href="#" style="color: red;">潮流T恤</a>
+		            	<a href="#">时尚女鞋</a>
+		            	<a href="#">短裤</a>
+		            	<a href="#">半身裙</a>
+		            	<a href="#">男士外套</a>
+		            	<a href="#">墙纸</a>
+		            	<a href="#">行车记录仪</a>
+		            	<a href="#">新款男鞋</a>
+		            	<a href="#">耳机</a>
+		            	<a href="#" class="readmore">更多></a>
+		            </div>
+		        </div>
+			</div>
+			<div class="qrcode">
+				<a href="https://www.taobao.com/m" class="qrcode-pic">
+					<span class="qrcode-name">手机淘宝</span>
+					<img src="img/erweima.png" style="width: 62px;height: 62px;"/>			
+				</a>
+				<a href="#" class="qrcode-close">×</a>
+				
+			</div>
+		</div>
+		
+		
+		<script>
+			window.onload = function(){
+				(function search(){
+					var oUl = document.getElementsByClassName("search-nav")[0];
+					var oLi = oUl.getElementsByTagName("li");
+					var oHots = document.getElementsByClassName("search-hots")[0];
+					var oDiv = oHots.getElementsByTagName("div");
+					var oClose = document.getElementsByClassName("qrcode-close")[0];
+					var oQr = document.getElementsByClassName("qrcode")[0];
+					oClose.onclick = function(){
+						oQr.style.display = "none";
+					}
+					
+					for(var i=0;i<oLi.length;i++){
+						oLi[i].index = i;
+						oLi[i].onclick = function(){
+							for(var y in oLi) oLi[y].className="";
+							for(var y in oDiv) oDiv[y].className="";
+							this.className ="selected";
+							oDiv[this.index].className="selected";
+						};
+					}
+				})()	
+			}
+		</script>
+	</body>
+</html>

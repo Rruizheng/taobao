@@ -4,6 +4,10 @@ html{
 	overflow-x: hidden;
 }
 
+body{
+	color: #3C3C3C;
+	z-index: -1;
+}
 
 /*header-cover*/
 .header-cover{
@@ -11,27 +15,492 @@ html{
 	height: 145px;
 }
 
+
+.fa-gray{
+    margin: 0 2px;
+    color: #9c9c9c;
+}
+.gray{
+    color: #c3c3c3;
+    cursor: pointer;
+}
+.fa-orange{
+    margin: 2px;
+    color: #f40;
+}
+/*header-cover*/
+.header-cover{
+	width: 100%;
+	height: 145px;
+	
+}
+
 /*top-info*/
 .header-cover .top-info{
 	margin: 0 auto;
 	width: 1190px;
-	height: 36px;
-	line-height: 36px;
+	height: 35px;
+	line-height: 35px;
+	border-bottom: 1px solid #eee;
 }
 
 /*top-left*/
-.top-left{
-	float: left;
+.top-rightwrap,.top-leftwrap{	
+	height: 35px;
+	margin: 0 auto;
+	position: relative;
+	display: inline-block;
 }
-.top-left li{
-	display: inline;
-}
-/*top-right*/
-.top-right{
+.top-rightwrap{
+	width:550px;
 	float: right;
 }
-.top-right li{
-	display: inline;
+.top-leftwrap{
+	width:580px;
+	float: left;
+}
+.top-left,.top-right{
+	height: 35px;
+    line-height: 35px;
+}
+.top-left{
+    float: left;
+}
+.top-right{
+    float: right;
+}
+.top-left li,.top-right li,.top-left4,.top-right4{
+	display: inline-block;
+	float: left;
+	padding: 0 6px;
+	height: 35px;
+}
+
+.country:hover,.user-name:hover, .msg-info:hover,.top-right1:hover,.top-right3:hover,.top-right5:hover,.top-right6:hover,.top-right7:hover{
+    background: #fff;
+}
+
+/*icon*/
+.top-left li i,.top-right li i{
+	display: inline-block;
+	vertical-align: middle;
+	float: left;
+	margin-top: 12px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+/*nav-文字*/
+.top-left li a,.top-right li a,span.top1{
+	display: inline-block;
+	float: left;
+	margin-right: 7px;	
+	height: 35px;
+	line-height: 35px;	
+}
+/*down-icon*/
+.down-icon{
+    display:inline-block;
+    float: left;
+    width: 3px;
+    height: 3px;
+    padding:0 2px;
+   	margin-top:16px ;
+  	background: url(../img/arrow.png) no-repeat center center;
+}
+/*vertical-line*/
+.vertical-line{
+	height: 35px;
+	padding: 0 5px;
+	float: left;
+}			
+
+/*user-box*/
+.country-box,
+.user-box,
+.msg-box,
+.my-taobao-box,
+.get-box,
+.center-box,
+.custom-box,
+.nav-box{
+    z-index: 99999;
+    position: absolute;
+    top: 35px;
+    width: 260px;
+	height: 170px;
+    border: 1px solid #eee;
+    border-top: none;
+  	overflow: hidden;
+    background: #fff;
+    display: none;
+}
+
+.country-box{
+	height: 290px;	
+	overflow-y: visible;
+	left: 0;
+	top: 35px;
+}
+.user-box{
+	left: 74px;
+	overflow: hidden;
+	height: 140px;
+}
+.country-box li{
+	height: 30px;
+	line-height: 30px;
+	padding-left: 6px;	
+}
+/*user-box*/
+/*my-head*/
+.my-head{
+    float: left;
+    margin: 25px 1px 15px 25px;
+    border-radius: 35px;
+}
+/*my-grow*/
+.my-grow{
+    float: right;
+    margin: 5px 0 0 0;
+    width: 148px;
+    height: 85px;
+}
+.my-grow > div{
+    float: right;
+    margin-right: 8px;
+}
+.my-grow p{
+    clear: both;
+    line-height: 20px;
+}
+
+
+/*my-privilege*/
+.my-privilege{	
+    clear: both;
+    height: 25px;
+    width: 90%;
+    line-height: 25px;
+    text-align: center;
+    background: rgb(255,240,232);
+    border: 1px solid rgb(255,232,222);
+    margin: 0  auto;
+}
+
+.msg-box{
+	height: 35px;
+	padding: 0 20px;
+	left: 113px;
+}
+.msg-box a{
+	float: right;
+}
+
+/*my-taobao-box*/
+.my-taobao-box{
+    width: 80px;
+    height: 56px;
+}
+.my-taobao-box li{
+    width: 95.5%;
+    height: 28px;
+    line-height: 28px;
+    color: #6C6C6C;
+    cursor: pointer;
+    padding-left: 4.5%;
+}
+.my-taobao-box li:hover{
+    background: #f3f3f3;
+}
+
+/*check-shopp*/
+.check-shopp{
+    padding: 5px;
+    background: #f40;
+    color: #fff;
+}
+.check-shopp:hover{
+    color: #fff;
+}
+/*get-box*/
+.get-box{
+    left: 154px;
+    width: 77px;
+    height: 58px;
+}
+.get-box li{
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    color: #6C6C6C;
+    cursor: pointer;
+}
+.get-box li:hover{
+    background: #f3f3f3;
+}
+/*center-box*/
+.center-box{
+    left: 310px;
+    width: 80px;
+    height: 168px;
+}
+.center-box li{
+    width: 95.5%;
+    height: 28px;
+    line-height: 28px;
+    color: #6c6c6c;
+    cursor: pointer;
+    padding-left: 4.5%;
+}
+.center-box li:hover{
+    background: #f3f3f3;
+}
+/*custom-box*/
+.custom-box{
+    left: 384px;
+    width: 75px;
+    height: 56px;
+}
+.custom-box li{
+    width: 95.5%;
+    height: 28px;
+    line-height: 28px;
+    color: #6c6c6c;
+    cursor: pointer;
+    padding-left: 4.5%;
+}
+.custom-box li:hover{
+    background: #f3f3f3;
+}
+/*nav-box*/
+.nav-box{
+    left: -640px;
+    width: 1190px;
+    height: 400px;
+  /*  display: none;*/
+}
+/**********************sub-nav*********************/
+.sub-nav{
+    position: relative;
+    margin: 6px auto;
+    width: 1190px;
+    height: 88px;
+    overflow: hidden;
+}
+/*top-sub-nav*/
+.top-sub-nav{
+    height: 100%;
+}
+/*sub-nav-cell*/
+.sub-nav-cell{
+    float: left;
+    width: 280px;
+    padding-left: 12px;
+    height: 100%;
+    border-right: 1px solid #eee;
+}
+.sub-nav-cell:last-child{
+    border-right: none;
+}
+
+.sub-nav-cell > h3{
+    margin-bottom: 3px;
+    font-size: 17px;
+}
+.orange{
+    color: #f40;
+}
+.green-sp{
+    color: #9fb838;
+}
+.red-now{
+    color: #db69a2;
+}
+.blue-more{
+    color: #2e9fdb;
+}
+.sub-nav-box li {
+    display: inline-block;
+    margin: 0 4px;
+    height: 25px;
+    line-height: 25px;
+    width: 58px;
+}
+.sub-nav-box-1 li {
+    width: 80px;
+}
+/*sub-nav-box*/
+.sub-nav-box  a {
+    display: inline-block;
+    height: 25px;
+    text-align: center;
+    padding: 0 3px;
+}
+.sub-nav-box  a:hover{
+    border-radius: 4px;
+    background: #f40;
+    color: #fff;
+}
+.sp a:hover{
+    background: #a0b959;
+}
+.now a:hover{
+    background: #df61ab;
+}
+.more a:hover{
+    background: #55a0e5;
+}
+		
+/******************scroll-search*******************/
+.scroll-search-box{
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    padding-top: 10px;
+    width: 100%;
+    height: 40px;
+    padding: 7px 0;
+    background: #FFF;
+    top: 0;
+    left: 0;
+}
+.scroll-search{
+    width: 1190px;
+    height: 40px;
+    margin:auto;
+}
+
+/*scroll-logo*/
+.scroll-logo{
+    float: left;
+    margin-right: 15%;
+}
+
+/*scroll-search-boxf*/
+.scroll-search-boxf{
+    float: left;
+    height: 36px;
+    width: 630px;
+    border: solid 2px #ff5000;
+    border-right: none;
+	border-radius: 20px;
+	position: relative;
+}
+
+/*scroll-search-nav*/
+.scroll-search-nav{
+    height: 36px;
+    width: 74px;
+    position: absolute;
+    background: #f4f4f4;
+    left: 0;
+    border-bottom-left-radius: 18px;
+    border-top-left-radius: 18px;
+    cursor: pointer;
+}
+
+.scroll-search-nav span.current-title{
+	width: 50px;
+	height: 36px;
+	display: inline-block;
+	position: relative;
+	left: 14px;
+	font-weight: 400;
+}
+
+.scroll-search-nav span.down-icon{
+	width: 6px;
+	height: 5px;
+	padding: 4px 3px 3px;
+	position: relative;
+	left: 60px;
+	margin-top: 12px;
+}
+
+.scroll-search-input{
+    left: 74px;
+    width: 472px;
+    height: 24px;
+    padding: 6px 0;
+    position: absolute;
+}
+
+.scroll-search-input input{
+	width: 472px;
+	height: 24px;
+	line-height: 24px;
+	position: absolute;
+	top: 6px;
+	left: 10px;
+	border: none;
+	outline: 0;
+	background: transparent;
+	font: 12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;	
+}
+
+.scroll-search-input .scroll-search-phone{
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	cursor: pointer;
+}
+.scroll-search-input .scroll-search-img{
+	width: 16px;
+	height: 24px;
+	position: absolute;
+	left: 10px;
+	top: 6px;
+}
+
+.scroll-search-button{
+	width: 74px;
+	height: 40px;
+	position: absolute;
+	top: -2px;
+	right: 0;
+	font-size: 18px;
+	color: #fff;
+	font-weight: 700;
+	background-color: #FF4200;
+	background-image: linear-gradient(to right,#ff9000 0,#ff5000 100%);
+	background-repeat: repeat-x;
+	border: none;
+	border-radius: 0 20px 20px 0;
+	cursor: pointer;
+}
+
+.scroll-search-toggle-box{
+	z-index: -1;
+	width: 74px;
+    height: 114px;
+    position: absolute;
+    top: 0;
+    border-top: none;
+  	overflow: hidden;
+    text-align: center;
+    background: #f4f4f4;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: none;
+}
+
+.scroll-search-toggle-box li{
+    cursor: pointer;
+    height: 74px;
+    height: 36px;
+    line-height: 36px;
+}
+.scroll-search-toggle-box li:nth-child(2){	 
+	background: linear-gradient(#f40,#f40) no-repeat;
+	background-size: 64px 1px;
+	background-position: 5px 31px;
+}
+.scroll-search-toggle-box li:hover{
+    color: #f40;
 }
 
 
@@ -75,237 +544,237 @@ html{
 }
 
 			
-			/*两侧背景*/
-			.bg{
-				position: relative;
-				background: red;
-			}
-			.left-bg,.right-bg{
-				width: 240px;
-				height: 800px;
-				z-index:3;
-			}
-			.left-bg{
-				position: absolute;
-				display: block;
-				top: -10px;
-				left:-240px;
-			}
-			.right-bg{
-				position: absolute;
-				display: block;
-				top: -10px;
-				left:1190px;
-			}
-			
-			
-			/* 搜索框 */
-			.search	{
-				width: 1190px;
-				height: 140px;
-				background: #FFF;
-				margin: 0 auto;
-				display: block;
-				position: relative;
-			}
-			.search .logo{
-				width: 190px;
-				height: 140px;
-				float: left;
-			}
-			
-			.search .search-box{
-				display: block;
-				margin-left: 258px;
-				margin-right: 302px;
-				width: 630px;
-				height: 87px;
-				position: absolute;
-				top: 26px;
-			}
-			.search .search-nav{
-				position: relative;
-				left: 16px;
-				width: 613px;
-				height: 22px;
-				display: block;
-			}
-			.search .search-nav li{
-				text-align: center;
-				display: inline-block;
-				width: 36px;
-				height: 22px;
-				line-height: 22px;
-				color: F40;
-				margin-right: 4px;
-				cursor: pointer;
-			}
-			.search .search-nav li:hover{
-				color:#FF5400;
-				background: #FFEEE5;
-			}
-			.search .search-nav li.selected{
-				color: #FFF;
-				font-weight: 700;
-				background:linear-gradient(to right,#ff9000 0,#ff5000 100%) repeat-x;
-				border-radius: 6px 6px 0 0;
-			}
-			
-			.search-box .search-boxf{
-				width: 628px;
-				height: 36px;
-				border: solid 2px #ff5000;
-				border-radius: 20px;	
-				display: block;
-				position: relative;
-			}
-			
-		
-			.search-box .search-boxf .search-input{
-				width: 554px;
-				height: 36px;
-				position: relative;
-				left: 0;
-				display: inline-block;
-			}
-			.search-box .search-boxf .search-input input{
-				width: 472px;
-				height: 36px;
-				line-height: 36px;
-				border: none;
-				outline: 0;
-				padding-bottom: 6px 0;
-				background: transparent;
-				font: 12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
-				position: absolute;
-				left: 10px;
-				
-			}
-			.search-box .search-boxf .search-phone{
-				width: 24px;
-				height: 36px;
-				display: inline-block;
-				position: absolute;
-				right: 20px;
-				top: 8px;
-				cursor: pointer;
-			}
-			
-			.search-box .search-boxf .search-btn{
-				display: inline-block;
-				width: 74px;
-				height: 40px;
-				position: absolute;
-				top: -2px;
-			}
-			.search-box .search-boxf .search-btn button{
-				width: 100%;
-				height: 100%;
-				font-size: 18px;
-				color: #fff;
-				font-weight: 700;
-				background-color: #FF4200;
-				background-image: linear-gradient(to right,#ff9000 0,#ff5000 100%);
-				background-repeat: repeat-x;
-				border: none;
-				border-radius: 0 20px 20px 0;
-				cursor: pointer;
-			}
-			.search-box .search-boxf .search-img{
-				width: 16px;
-				height: 24px;
-				position: absolute;
-				left: 12px;
-				top: 10px;
-			}
-			
-			/*热搜链接*/
-			.search-box .search-hots{
-				display: block;
-				width: 630px;
-				height: 25px;
-				position: relative;
-				padding-top: 6px;
-			}
-			.search-box .search-hots div{
-				display: none;
-			}
-			.search-box .search-hots div.selected{
-				display: block;
-			}
-			.search-box .search-hots a{
-				cursor: pointer;
-				height: 18px;
-				line-height: 18px;
-				margin-right: 8px;
-				margin-bottom: 5px;
-				white-space: nowrap;
-				float: left;
-			}
-			.search-box .search-hots div a.readmore{
-				width: 36px;
-				height: 19px;
-				float: right;	
-			}
-			
-			/*淘宝二维码*/
-			.search .qrcode{
-				width: 76px;
-				height: 90px;
-				display: block;
-				position: relative;
-				left: 1004px;
-				top: 24px;
-				background: green;
-			}
-			
-			.search .qrcode .qrcode-pic{
-				width: 74px;
-				height: 88px;
-				border: 1px solid #eee;
-				background: #FFF;
-				display: block;
-				cursor: pointer;
-			}
-			.search .qrcode .qrcode-pic:before,.qrcode-pic:after{
-				content:"";
-				display: table;
-			}
-			.search .qrcode .qrcode-pic:after{
-				height: 0;
-				line-height: 0;
-				visibility: visible;
-				clear: both;
-			}
-			.search .qrcode .qrcode-pic span{
-				height: 20px;
-				line-height: 20px;
-				text-align: center;
-				width: 78px;
-				display: inline-block;
-				color: red;
-				margin: 3px 0;
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-			.search .qrcode .qrcode-pic img{
-				width: 62px;
-				height: 62px;
-				position: absolute;
-				top: 24px;
-				left: 7px;
-			}
-			
-			/*关闭二维码*/
-			.search .qrcode .qrcode-close{
-				width: 14px;
-				height: 14px;
-				cursor: pointer;
-				display: block;
-				border: 1px solid #eee;
-				position: absolute;
-				text-align: center;
-				top: 0;
-				left: -16px;
-			}
+/*两侧背景*/
+.bg{
+	position: relative;
+	background: red;
+}
+.left-bg,.right-bg{
+	width: 240px;
+	height: 800px;
+	z-index:3;
+}
+.left-bg{
+	position: absolute;
+	display: block;
+	top: -10px;
+	left:-240px;
+}
+.right-bg{
+	position: absolute;
+	display: block;
+	top: -10px;
+	left:1190px;
+}
+
+
+/* 搜索框 */
+.search	{
+	width: 1190px;
+	height: 140px;
+	background: #FFF;
+	margin: 0 auto;
+	display: block;
+	position: relative;
+}
+.search .logo{
+	width: 190px;
+	height: 140px;
+	float: left;
+}
+
+.search .search-box{
+	display: block;
+	margin-left: 258px;
+	margin-right: 302px;
+	width: 630px;
+	height: 87px;
+	position: absolute;
+	top: 26px;
+}
+.search .search-nav{
+	position: relative;
+	left: 16px;
+	width: 613px;
+	height: 22px;
+	display: block;
+}
+.search .search-nav li{
+	text-align: center;
+	display: inline-block;
+	width: 36px;
+	height: 22px;
+	line-height: 22px;
+	color: F40;
+	margin-right: 4px;
+	cursor: pointer;
+}
+.search .search-nav li:hover{
+	color:#FF5400;
+	background: #FFEEE5;
+}
+.search .search-nav li.selected{
+	color: #FFF;
+	font-weight: 700;
+	background:linear-gradient(to right,#ff9000 0,#ff5000 100%) repeat-x;
+	border-radius: 6px 6px 0 0;
+}
+
+.search-box .search-boxf{
+	width: 628px;
+	height: 36px;
+	border: solid 2px #ff5000;
+	border-radius: 20px;	
+	display: block;
+	position: relative;
+}
+
+
+.search-box .search-boxf .search-input{
+	width: 554px;
+	height: 36px;
+	position: relative;
+	left: 0;
+	display: inline-block;
+}
+.search-box .search-boxf .search-input input{
+	width: 472px;
+	height: 36px;
+	line-height: 36px;
+	border: none;
+	outline: 0;
+	padding-bottom: 6px;
+	background: transparent;
+	font: 12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+	position: absolute;
+	left: 10px;
+	
+}
+.search-box .search-boxf .search-phone{
+	width: 24px;
+	height: 36px;
+	display: inline-block;
+	position: absolute;
+	right: 20px;
+	top: 8px;
+	cursor: pointer;
+}
+
+.search-box .search-boxf .search-btn{
+	display: inline-block;
+	width: 74px;
+	height: 40px;
+	position: absolute;
+	top: -2px;
+}
+.search-box .search-boxf .search-btn button{
+	width: 100%;
+	height: 100%;
+	font-size: 18px;
+	color: #fff;
+	font-weight: 700;
+	background-color: #FF4200;
+	background-image: linear-gradient(to right,#ff9000 0,#ff5000 100%);
+	background-repeat: repeat-x;
+	border: none;
+	border-radius: 0 20px 20px 0;
+	cursor: pointer;
+}
+.search-box .search-boxf .search-img{
+	width: 16px;
+	height: 24px;
+	position: absolute;
+	left: 12px;
+	top: 10px;
+}
+
+/*热搜链接*/
+.search-box .search-hots{
+	display: block;
+	width: 630px;
+	height: 25px;
+	position: relative;
+	padding-top: 6px;
+}
+.search-box .search-hots div{
+	display: none;
+}
+.search-box .search-hots div.selected{
+	display: block;
+}
+.search-box .search-hots a{
+	cursor: pointer;
+	height: 18px;
+	line-height: 18px;
+	margin-right: 8px;
+	margin-bottom: 5px;
+	white-space: nowrap;
+	float: left;
+}
+.search-box .search-hots div a.readmore{
+	width: 36px;
+	height: 19px;
+	float: right;	
+}
+
+/*淘宝二维码*/
+.search .qrcode{
+	width: 76px;
+	height: 90px;
+	display: block;
+	position: relative;
+	left: 1004px;
+	top: 24px;
+	background: green;
+}
+
+.search .qrcode .qrcode-pic{
+	width: 74px;
+	height: 88px;
+	border: 1px solid #eee;
+	background: #FFF;
+	display: block;
+	cursor: pointer;
+}
+.search .qrcode .qrcode-pic:before,.qrcode-pic:after{
+	content:"";
+	display: table;
+}
+.search .qrcode .qrcode-pic:after{
+	height: 0;
+	line-height: 0;
+	visibility: visible;
+	clear: both;
+}
+.search .qrcode .qrcode-pic span{
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	width: 78px;
+	display: inline-block;
+	color: red;
+	margin: 3px 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.search .qrcode .qrcode-pic img{
+	width: 62px;
+	height: 62px;
+	position: absolute;
+	top: 24px;
+	left: 7px;
+}
+
+/*关闭二维码*/
+.search .qrcode .qrcode-close{
+	width: 14px;
+	height: 14px;
+	cursor: pointer;
+	display: block;
+	border: 1px solid #eee;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	left: -16px;
+}

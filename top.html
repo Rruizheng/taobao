@@ -8,6 +8,11 @@
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 		<!--<link rel="stylesheet" type="text/css" href="css/font-awesome.css">-->
 		<style>
+			
+html *{
+	padding:0;
+	margin: 0;
+}
 body{
 	color: #3C3C3C;
 	z-index: -1;
@@ -41,8 +46,7 @@ body{
 }
 
 /*top-left*/
-.top-rightwrap,.top-leftwrap{
-	
+.top-rightwrap,.top-leftwrap{	
 	height: 35px;
 	margin: 0 auto;
 	position: relative;
@@ -119,9 +123,7 @@ body{
 .get-box,
 .center-box,
 .custom-box,
-.nav-box,
-.search-toggle-box,
-.search-toggle-box-scroll{
+.nav-box{
     z-index: 99999;
     position: absolute;
     top: 35px;
@@ -129,7 +131,7 @@ body{
 	height: 170px;
     border: 1px solid #eee;
     border-top: none;
-    overflow: hidden;
+  	overflow: hidden;
     background: #fff;
     display: none;
 }
@@ -352,28 +354,154 @@ body{
 }
 		
 /******************scroll-search*******************/
-.scroll-search{
-    /*display: none;*/
-    position: relative;
-    z-index: 8888;
+.scroll-search-box{
+    display: none;
+    position: fixed;
+    z-index: 1001;
     padding-top: 10px;
-    clear: both;
     width: 100%;
-    height: 42px;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    box-shadow: 0 2px 2px #eee;
+    height: 40px;
+    padding: 7px 0;
+    background: #FFF;
+    top: 0;
+    left: 0;
 }
-.search-litter{
+.scroll-search{
     width: 1190px;
-    margin: auto;
+    height: 40px;
+    margin:auto;
 }
+
 /*scroll-logo*/
 .scroll-logo{
     float: left;
     margin-right: 15%;
 }
 
+/*scroll-search-boxf*/
+.scroll-search-boxf{
+    float: left;
+    height: 36px;
+    width: 630px;
+    border: solid 2px #ff5000;
+    border-right: none;
+	border-radius: 20px;
+	position: relative;
+}
+
+/*scroll-search-nav*/
+.scroll-search-nav{
+    height: 36px;
+    width: 74px;
+    position: absolute;
+    background: #f4f4f4;
+    left: 0;
+    border-bottom-left-radius: 18px;
+    border-top-left-radius: 18px;
+}
+
+.scroll-search-nav span.current-title{
+	width: 50px;
+	height: 36px;
+	display: inline-block;
+	position: relative;
+	left: 14px;
+	font-weight: 400;
+}
+
+.scroll-search-nav span.down-icon{
+	width: 6px;
+	height: 5px;
+	padding: 4px 3px 3px;
+	position: relative;
+	left: 60px;
+	margin-top: 12px;
+}
+
+.scroll-search-input{
+    left: 74px;
+    width: 472px;
+    height: 24px;
+    padding: 6px 0;
+    position: absolute;
+}
+
+.scroll-search-input input{
+	width: 472px;
+	height: 24px;
+	line-height: 24px;
+	position: absolute;
+	top: 6px;
+	left: 10px;
+	border: none;
+	outline: 0;
+	background: transparent;
+	font: 12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;	
+}
+
+.scroll-search-input .scroll-search-phone{
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	right: 10px;
+	top: 6px;
+	cursor: pointer;
+}
+.scroll-search-input .scroll-search-img{
+	width: 16px;
+	height: 24px;
+	position: absolute;
+	left: 10px;
+	top: 6px;
+}
+
+.scroll-search-button{
+	width: 74px;
+	height: 40px;
+	position: absolute;
+	top: -2px;
+	right: 0;
+	font-size: 18px;
+	color: #fff;
+	font-weight: 700;
+	background-color: #FF4200;
+	background-image: linear-gradient(to right,#ff9000 0,#ff5000 100%);
+	background-repeat: repeat-x;
+	border: none;
+	border-radius: 0 20px 20px 0;
+	cursor: pointer;
+}
+
+.scroll-search-toggle-box{
+	z-index: -1;
+	width: 74px;
+    height: 114px;
+    position: absolute;
+    top: 0;
+    border-top: none;
+  	overflow: hidden;
+    text-align: center;
+    background: #f4f4f4;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: none;
+}
+
+.scroll-search-toggle-box li{
+    cursor: pointer;
+    height: 74px;
+    height: 36px;
+    line-height: 36px;
+}
+.scroll-search-toggle-box li:nth-child(2){	 
+	background: linear-gradient(#f40,#f40) no-repeat;
+	background-size: 64px 1px;
+	background-position: 5px 31px;
+}
+.scroll-search-toggle-box li:hover{
+    color: #f40;
+}
 
 /******************top-ad*******************/			
 /*.top-ad*/
@@ -414,7 +542,8 @@ body{
 	margin: 0 auto;
 	background: #FFF;
 }
-		</style>
+		
+</style>
 	</head>
 	<body>
 		<div class="header-cover">
@@ -670,24 +799,36 @@ body{
 			</div>
 		
 			<!--scroll-top-->
-	        <div class="scroll-search">
-	            <div class="search-litter">
+	        <div class="scroll-search-box">
+	            <div class="scroll-search">
 	                <img class="scroll-logo" src="img/logo.png" />
 	                <!--scroll-search-->
-	                <div class="search-wrapper-scroll">
-	                    <div class="search-box-scroll">
-	                        <div data-toggle="arrowdown" id="arrow9" class="search-toggle-scroll">
-	                            宝贝<span class="down-icon"></span>
-	                        </div>
-	                        <input class="search-in-scroll" type="text" placeholder="  我的github: https://github.com/Rruizheng" />
-	                        <input type="button" class="search-but-scroll" value="搜索">
-	                        <div data-toggle="hidden-box" id="nav-box9" class="search-toggle-box-scroll">
-	                        	<ul>
-	                        		<li>天猫</li>
-	                        		<li>店铺</li>
-	                        	</ul>
-	                        </div>
-	                    </div>
+	                <div class="scroll-search-boxf">
+                        <div data-toggle="arrowdown" id="arrow9" class="scroll-search-nav">
+                           <span class="current-title">宝贝</span>
+                           <div data-toggle="hidden-box" id="nav-box9" class="scroll-search-toggle-box">
+                           		
+		                    	<ul>
+		                    		<li></li>
+		                    		<li>天猫</li>
+		                    		<li>店铺</li>
+		                    	</ul>
+                           </div>
+                            <span class="down-icon"></span>
+                        </div>
+                        <div class="scroll-search-input">
+			        		<input type="text" placeholder="     ins书包双肩"/>
+					        <div class="scroll-search-phone">
+					        		<img src="img/相机.png" style="width: 24px;height: 20px;"/>
+				       		 </div>
+				       		 <i class="scroll-search-img"><img src="img/搜索.png" style="width: 16px;height: 16px;"/></i>
+			        	</div>
+				        	
+                        <button class="scroll-search-button">搜索</button>
+                        
+                        
+                        <!--hidden-box-->
+                       
 	                </div>
 	            </div>
 	        </div>
@@ -720,6 +861,25 @@ body{
 		</div>
         <div class="white-box"></div>
 	</div>
+
+<script>	
+
+//滚动出现固定导航
+
+window.onload = function(){
+	var scrollBox = document.getElementsByClassName("scroll-search-box")[0];
+	
+}
+(function(){
+    $(window).scroll(function(){
+        var scTop = $(window).scrollTop(),
+            $scS = $('.scroll-search-box');
+        scTop >= 200 ? $scS.slideDown(200) : $scS.slideUp(200);
+    });
+})(jQuery);
+
+
+</script>
 
 	</body>
 </html>

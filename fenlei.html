@@ -1,84 +1,3083 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>搜索框</title>
+		<title>分类栏</title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css">
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<style>
-			/* 搜索框 */
-			.search	{
-				width: 1190px;
-				height: 140px;
-				background: #FFF;
-				margin: 0 auto;
-				display: block;
-				position: relative;
-			}
-			.search .search-wrap{
-				
-			}
-			.search .logo{
-				width: 190px;
-				height: 140px;
-				float: left;
-			}
-			
-			.search .search-box{
-				display: block;
-				margin-left: 258px;
-				margin-right: 302px;
-				width: 630px;
-				height: 87px;
-				background: red;
-				position: absolute;
-				top: 26px;
-			}
-			.search .search-nav{
-				position: relative;
-				left: 16px;
-				width: 613px;
-				height: 22px;
-				background: yellow;
-				display: block;
-			}
+.header-nav-wrap ul li a,.header .header-nav h2,.header .header-nav .line-a{
+	font-size: 16px;  
+	color: #FFF;
+	font-weight: bold;
+	text-align: center;
+}
+.header .header-nav h2{
+	width: 190px;
+	display: inline-block;
+    background: #ff5000;
+    cursor: pointer;
+}
+.header .header-nav ul{
+	list-style: none;
+	display: inline-block;
+}
+.header .header-nav ul li{
+	list-style: none;
+	display: inline-block;
+}	
+.header .header-nav ul li:hover{
+	background: #FF4400;
+	border-radius: 15px;
+}
+.header-nav{
+	width:100%;
+	height: 30px;
+	line-height: 30px;
+	background: linear-gradient(to right,#ff9000 0,#ff5000 100%) repeat-x;
+}
+.header-nav-wrap{
+	width: 1190px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0 auto;
+}
 
-			.search-box .search-boxf{
-				
-				width: 628px;
-				height: 36px;
-				border: solid 2px #ff5000;
-				border-radius: 20px;	
-				display: block;
-				background: blue;
-			}
-			
-		
-			.search-box .search-hots{
-				display: block;
-				width: 589px;
-				height: 18px;
-				background: green;
-				position: relative;
-			}
+.header-nav-left li{
+	margin: 0 3px;
+    text-align: center;
+    padding: 0 4px;
+    cursor: pointer;
+}
+.header-nav-middle li,.header-nav-right li,.header .header-nav .line-a{
+	margin-left: 7px;
+	cursor: pointer;
+}			
+
+/*header整体布局*/
+.header-bar{
+	width: 1190px;
+	height: 632px;
+	margin: 0 auto;
+}
+.header-leftbar{
+	width: 900px;
+	height: 522px;
+	float: left;
+}
+.header-sidebar{
+	background: #FFF;
+	width: 188px;
+	height: 512px;
+	border: 1px solid #ff5000;
+    border-top: none;
+    padding-top: 5px;
+    padding-bottom: 3px;
+    display: inline-block;
+    float: left;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.header-imgbar{
+	background: blue;
+	margin-left: 10px;
+    margin-top: 10px;
+    float: left;
+    height: 512px;
+    width: 520px;
+    display: inline-block;
+}
+.header-imgbar .header-imgbar1{
+	background: red;
+    overflow: hidden;
+    position: relative;
+    width: 520px;
+    height: 280px;
+}
+
+
+
+.header-hotimg{
+	background: red;
+	display: inline-block;
+	float: right;
+    width: 160px;
+    height: 512px;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.header-bottombar{
+	background: green;
+	clear: both;
+	position: relative;
+    padding: 14px 14px 12px 20px;
+    margin-top: 10px; 
+    width: 856px;
+    height: 73px;
+}
+
+.header-rightbar{
+	background: yellow;
+	float: right;
+    width: 290px;
+    height: 100%;
+    margin-top: 10px;
+}
+
+/*侧边栏sidebar*/
+.side-li > li h3{
+	overflow: hidden;
+	
+    line-height: 32px;
+    height: 32px;
+    padding-left: 25px;
+    padding-right: 19px;
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    width: 145px;
+    color: #666;
+}
+.side-li > li:hover h3,.side-li > li:hover a{
+	color: #FF5000;
+}
+.side-li > li:hover{	
+	background: #ffe4dc;
+}
+
+.side-li > li h3 a {
+    cursor: pointer;
+}
+.side-li > li h3 a:hover{
+    text-decoration: underline;
+}
+.side-li > li span{
+	position: absolute;
+	top: 10.5px;
+	right: 10px;
+	font-size: 12px;
+}
+
+.hiden-box{   
+	display:none;
+/*	opacity: 0;
+	filter: alpha(opacity=0);*/
+    position: absolute;
+    z-index: 4888;
+    left: 188px;
+    top: 0;
+    padding: 0 0 0 18px;
+    width: 692px;
+    height: 518px;
+    border: 2px solid #F94A14;
+    box-shadow: 2px 2px 0 #dcdadb;
+    background-color: #FFF;
+    color: #333;
+    font-size: 12px;
+    transition: all .2s;
+}
+
+.hiden-box-left{
+    padding-top: 10px;
+    width: 415px;
+    height: 490px;
+    overflow: hidden;
+    padding-right: 12px;
+    padding-left: 10px;
+    float: left;
+}
+
+
+.hiden-box-left-block h4{
+    position: relative;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+    color: #333;
+}
+.hiden-box-left-block h4 a span{
+    font-size: 12px;
+    right: -4px;
+    position: absolute;
+    font-weight: 400;
+    top: 0;
+}
+
+.hiden-box-left-block h4 a span i{
+	position: relative;
+    left: -4px;
+    font-size: 12px;
+}
+    
+.hblb-content{
+    height: 104px;
+    overflow: hidden;
+    padding-bottom: 33px;
+    line-height: 26px;
+}
+.hblb-content > a{
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 12px;
+}
+.hblb-content > a.orange{
+    color:#f40;
+}
+
+.hiden-box-right{
+    float: left;
+    width: 253px;
+    border-left: 1px solid #f4f4f4;
+    position: relative;
+    height: 498px;
+    padding-top: 20px;
+}
+
+.hiden-box-right-head h5{
+    line-height: 18px;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.hiden-box-right-content a{
+    display: inline-block;
+    width: 97px;
+    height: 143px;
+    padding: 10px 0 0 20px;
+    overflow: hidden;
+}
+.hiden-box-right-content img{
+	display: block;
+    width: 98px;
+    height: 97px;
+    overflow: hidden;
+}
+.hiden-box-right-content h5{
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    overflow: hidden;
+    font-weight: 400;
+    color: #999;
+}
 		</style>
 	</head>
 	<body>
-		<div class="search">
-			<div class="search-wrap">
-				<div class="logo">
-           		 <a href="https://pages.tmall.com/wow/act/18920/main-102367?wh_weex=true">   
-           		 	<img src="img/logo.gif" height="140" width="190" alt="">
-           		</a>
-        	</div>
-				<div class="search-box">
-			        <div class="search-nav"></div>
-			        <div class="search-boxf"></div>
-			        <div class="search-hots"></div>
-
-			    </div>
+		<div class="header">
+			<div class="header-nav">
+				<div class="header-nav-wrap">
+					<h2>主题市场</h2>
+					<ul class="header-nav-left">
+						 <li><a href="#">天猫</a></li>
+						 <li> <a href="#">聚划算</a></li>
+						 <li><a href="#">天猫超市</a></li>
+					</ul>
+					<span class="line-a">|</span>
+					<ul class="header-nav-middle">
+						<li><a href="#">淘抢购</a></li>
+						<li><a href="#">电器城</a></li>
+						<li><a href="#">司法拍卖</a></li>
+						<li><a href="#">中国质造</a></li>
+						<li><a href="#">兴农扶贫</a></li>
+					</ul>
+					<span class="line-a">|</span>
+					<ul class="header-nav-right">
+						<li><a href="#">飞猪旅行</a></li>
+						<li><a href="#">智能生活</a></li>
+						<li><a href="#">苏宁易购</a></li>
+					</ul>
+				</div>
 				
 			</div>
 			
+			<div class="header-bar">
+				<div class="header-leftbar">
+					<!--侧边导航栏-->
+					<div class="header-sidebar">
+						<ul class="side-li">
+		                    <li toggle="side" class="s_a"><h3><a href="#">女装</a> / <a href="#">男装</a> / <a href="#">内衣</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_b"><h3><a href="#">鞋靴</a> / <a href="#">箱包</a> / <a href="#">配件</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_c"><h3><a href="#">童装玩具</a> / <a href="#">孕产</a> / <a href="#">用品</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_d"><h3><a href="#">家电</a> / <a href="#">数码</a>/<a href="#">手机</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_e"><h3><a href="#">美妆</a> / <a href="#">洗护</a> / <a href="#">保健品</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_f"><h3><a href="#">珠宝</a> / <a href="#">眼镜</a> / <a href="#">手表</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_g"><h3><a href="#">运动</a> / <a href="#">户外</a> / <a href="#">乐器</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_h"><h3><a href="#">游戏</a> / <a href="#">动漫</a> / <a href="#">影视</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_i"><h3><a href="#">美食</a> / <a href="#">生鲜</a> / <a href="#">零食</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_j"><h3><a href="#">鲜花</a> / <a href="#">宠物</a> / <a href="#">农资</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_k"><h3><a href="#">房产</a> / <a href="#">装修</a> / <a href="#">建材</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_l"><h3><a href="#">家具</a> / <a href="#">家饰</a> / <a href="#">家纺</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_m"><h3><a href="#">汽车</a> / <a href="#">二手车</a> / <a href="#">用品</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_n"><h3><a href="#">办公</a> / <a href="#">DIY</a> / <a href="#">五金电子</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_o"><h3><a href="#">百货</a> / <a href="#">餐厨</a> / <a href="#">家庭保健</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                    <li toggle="side" class="s_p"><h3><a href="#">学习</a> / <a href="#">卡券</a> / <a href="#">本地服务</a><span class="fa fa-angle-right fa-loc"></span></h3></li>
+		                </ul>
+		                <div class="hiden-box" id="hiden-box-a">
+					       <div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4><a href="#">女装</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">男装</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">内衣</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-b">
+					        <div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">鞋靴</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">箱包</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">配件</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-c">
+					      	<div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">童装玩具</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">孕产</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">用品</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					   <div class="hiden-box" id="hiden-box-d">
+					       <div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">家电</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">数码</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">手机</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-e">
+					        <div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">美妆</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">洗护</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">保健品</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-f">
+					      	<div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">珠宝</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">眼镜</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">手表</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-g">
+					      	<div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">运动</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">户外</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">乐器</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-h">
+					      	<div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">游戏</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">动漫</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">影视</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-i">
+					      	<div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">美食</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">生鲜</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">零食</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-j">
+					      	<div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">鲜花</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">宠物</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">农资</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-k">
+					        <div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">房产</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">装修</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">建材</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-l">
+					        <div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">家具</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">家饰</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">家纺</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-m">
+					       <div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">汽车</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">二手车</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">用品</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-n">
+					        <div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">办公</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">DIY</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">五金电子</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-o">
+					        <div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">百货</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">餐厨</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">家庭保健</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					    <div class="hiden-box" id="hiden-box-p">
+					        <div class="hiden-box-left">
+					            <div class="hiden-box-left-block">
+				                    <h4>
+				                    <a href="#">学习</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">女鞋</a>
+					                    <a href="#" class="orange">凉鞋新款</a>
+					                    <a href="#">平底凉鞋</a>
+					                    <a href="#">抢新品</a>
+					                    <a href="#" class="orange">猫跟鞋</a>
+					                    <a href="#">玛丽珍鞋</a>
+					                    <a href="#">小白鞋</a>
+					                    <a href="#">运动鞋女</a>
+					                    <a href="#">帆布鞋</a>
+					                    <a href="#">松糕厚底</a>
+					                    <a href="#" class="orange">平底鞋</a>
+					                    <a href="#">低跟</a>
+					                    <a href="#">中跟</a>
+					                    <a href="#">高跟</a>
+					                    <a href="#">妈妈鞋</a>
+					                    <a href="#" class="orange">男鞋</a>
+					                    <a href="#">夏季新款</a>
+					                    <a href="#">网布鞋</a>
+					                    <a href="#" class="orange">凉鞋</a>
+					                    <a href="#">休闲鞋</a>
+					                    <a href="#">板鞋</a>
+					                    <a href="#">布鞋</a>
+					                    <a href="#">运动风</a>
+					                    <a href="#">豆豆鞋</a>
+					                    <a href="#">乐福鞋</a>
+					                    <a href="#">雕花布洛克</a>
+					                    <a href="#">船鞋</a>
+					                    <a href="#">增高鞋</a>
+					                    <a href="#">正装商务</a>
+					                    <a href="#">户外休闲鞋</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">卡券票</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#" class="orange">春季新品</a>
+					                    <a href="#" class="orange">女包</a>
+					                    <a href="#" class="orange">男包</a>
+					                    <a href="#">双肩包</a>
+					                    <a href="#">旅行箱</a>
+					                    <a href="#">钱包</a>
+					                    <a href="#" class="orange">特色箱包</a>
+					                    <a href="#">潮包</a>
+					                    <a href="#">大牌</a>
+					                    <a href="#">真皮包</a>
+					                    <a href="#">帆布包</a>
+					                    <a href="#" class="orange">单肩包</a>
+					                    <a href="#" class="orange">斜挎包</a>
+					                    <a href="#">手提包</a>
+					                    <a href="#">手拿包</a>
+					                    <a href="#">手机包</a>
+					                    <a href="#">零钱包</a>
+					                    <a href="#">中年包</a>
+					                    <a href="#" class="orange">迷你包</a>
+					                    <a href="#">大包</a>
+					                    <a href="#" class="orange">小方包</a>
+					                    <a href="#">贝壳包</a>
+					                    <a href="#" class="orange">链条包</a>
+					                    <a href="#">欧美风</a>
+					                    <a href="#">日韩风</a>
+					                    <a href="#">学院风</a>
+					                    <a href="#">腰包</a>
+					                    <a href="#">通勤</a>
+					                    <a href="#">休闲</a>
+					                    <a href="#">胸包</a>
+					                    <a href="#">学生箱</a>
+					                    <a href="#">航空包</a>
+					                    <a href="#">万向轮</a>
+					                </div>
+					            </div>
+					            <div class="hiden-box-left-block">
+					                <h4>
+				                    <a href="#">本地服务</a>
+				                    <a href="#">
+				                    	<span>更多&nbsp;
+				                    		<i class="fa fa-angle-right"></i>
+				                    	</span>	
+				                    </a>
+				                    </h4>
+					                <div class="hblb-content">
+					                    <a href="#">帽子</a>
+					                    <a href="#" class="orange">针织帽</a>
+					                    <a href="#">贝雷帽</a>
+					                    <a href="#">渔夫帽</a>
+					                    <a href="#" class="orange">鸭舌帽</a>
+					                    <a href="#">礼帽</a>
+					                    <a href="#" class="orange">毛线帽</a>
+					                    <a href="#">套头帽</a>
+					                    <a href="#">爵士帽</a>
+					                    <a href="#">盆帽</a>
+					                    <a href="#" class="orange">八角帽</a>
+					                    <a href="#">围巾</a>
+					                    <a href="#">羊绒围巾</a>
+					                    <a href="#">披肩</a>
+					                    <a href="#">羊毛围巾</a>
+					                    <a href="#" class="orange">真丝围巾</a>
+					                    <a href="#">棉麻围巾</a>
+					                    <a href="#" class="orange">方巾</a>
+					                    <a href="#">羊绒羊毛混纺围巾</a>
+					                    <a href="#">羊毛棉混纺围巾</a>
+					                    <a href="#">手套</a>
+					                    <a href="#">真皮手套</a>
+					                    <a href="#" class="orange">触屏手套</a>
+					                    <a href="#">半指手套</a>
+					                    <a href="#">全指手套</a>
+					                    <a href="#" class="orange">毛线手套</a>
+					                    <a href="#">真皮腰带</a>
+					                    <a href="#">腰带</a>
+					                </div>
+					            </div>
+					        </div>
+					        <div class="hiden-box-right">
+					            <div class="hiden-box-right-head">
+					                <h5>猜你喜欢</h5>
+					                
+					            </div>
+					            <div class="hiden-box-right-content">
+					                <a href="#"><img src="../img/fenlei/1.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/2.webp"><h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5></a>
+					                <a href="#"><img src="../img/fenlei/3.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/4.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/5.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					                <a href="#"><img src="../img/fenlei/6.webp">
+					                	<h5>
+					                		<span>GRINCH 2017 AW 原创设计欧美街拍衬衫外套男士复古极简夹克潮牌</span>
+					                	</h5>
+					                </a>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+					<!--图片轮播区域-->
+					<div class="header-content">
+						<div class="header-imgbar">
+							<div class="header-imgbar1"></div>
+							<div class="header-imgbar2"></div>
+						</div>
+						<div class="header-hotimg">
+							<img src="" alt="" class="header-hotimg1" />
+							<img src="" alt="" class="header-hotimg2" />
+						</div>
+					</div>
+					<div class="header-bottombar">
+						
+					</div>
+				</div>
+				
+				<div class="header-rightbar">
+					
+				</div>
+			</div>
+			
 		</div>
+		
+		
+		<script type="text/javascript">
+			
+			
+			window.onload = function(){
+				function css(obj,attr,value){
+					//检验给函数的参数个数
+					switch(arguments.length){
+						case 2:
+						//例如css(oLi, {"opacity" : "0", "height" : "0"});设置了对象obj,第二个对象类型是object,批量设置属性。style[i]=attr[i]。attr[opacity] = 0。
+							if(typeof arguments[1] == "object"){
+								for(var i in attr) i == "opacity" ?(obj.style["filter"] = "alpha(opacity=" + attr[i] + ")") : obj.style[i] = attr[i];
+						//例如css(oLi, "height");第二个对象类型是string,读取属性
+							}else{
+								//IE用currentStyle方法，没有的话，用getComputedStyle方法
+								return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj,null)[attr]
+							}
+							break;
+						//有三个参数，单一设置属性。
+						case 3:
+							attr == "opacity" ? (obj.style["filter"] = "alpha(opacity=" + value + ")",obj.style[attr] = value/100) : obj.style[attr] = value;
+							break;
+					}
+				};
+				
+				
+				(function sidebar(){
+					var oHeadSidBar = document.getElementsByClassName("header-sidebar")[0];
+					var oLi = oHeadSidBar.getElementsByClassName("side-li")[0].getElementsByTagName("li");
+					var oBox = oHeadSidBar.getElementsByClassName("hiden-box");
+						
+					for(var i=0;i<oLi.length;i++){					
+						oLi[i].index = i;
+						oLi[i].onmouseover= function(){
+							for(var y=0;y<oBox.length;y++){
+								oBox[y].style.display = "none"
+							} 
+							for(var y=0;y<oLi.length;y++){
+								oLi[y].style.backgroundColor="#FFF";
+							}
+							oBox[this.index].style.display="block";
+							oBox[this.index].index = this.index;
+							this.style.backgroundColor="#ffe4dc";
+							oBox[this.index].onmouseleave = function(){
+								this.style.display = "none";
+								oLi[this.index].style.backgroundColor = "#FFF";
+							}
+							this.onmouseleave = function(event){
+								event = event || window.event;
+								var oLix = this.getBoundingClientRect().left;
+								if(event.clientX <= oLix){
+									for(var y=0;y<oBox.length;y++){
+										oBox[y].style.display = "none";
+									}
+									for(var y=0;y<oLi.length;y++){
+										oLi[y].style.backgroundColor="#FFF";
+									}
+								}
+							}
+						}
+					}
+				})();
+				
+				
+				
+				
+			}
+		</script>
+		
 	</body>
 </html>

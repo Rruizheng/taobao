@@ -52,11 +52,11 @@ body{
 	display: inline-block;
 }
 .top-rightwrap{
-	width:550px;
+	width: 650px;
 	float: right;
 }
 .top-leftwrap{
-	width:580px;
+	width:500px;
 	float: left;
 }
 .top-left,.top-right{
@@ -74,11 +74,10 @@ body{
 	float: left;
 	padding: 0 6px;
 	height: 35px;
+	cursor: pointer;
 }
 
-.country:hover,.user-name:hover, .msg-info:hover,.top-right1:hover,.top-right3:hover,.top-right5:hover,.top-right6:hover,.top-right7:hover{
-    background: #fff;
-}
+
 
 /*icon*/
 .top-left li i,.top-right li i{
@@ -141,6 +140,13 @@ body{
 	left: 0;
 	top: 35px;
 }
+.country-box li:hover{
+	background: #f4f4f4;
+}
+.country-box li{
+	cursor: pointer;
+}
+
 .user-box{
 	left: 74px;
 	overflow: hidden;
@@ -258,7 +264,7 @@ body{
 }
 /*custom-box*/
 .custom-box{
-    left: 384px;
+    right:384px;
     width: 75px;
     height: 56px;
 }
@@ -275,7 +281,7 @@ body{
 }
 /*nav-box*/
 .nav-box{
-    left: -640px;
+    right: 0;
     width: 1190px;
     height: 400px;
   /*  display: none;*/
@@ -777,4 +783,56 @@ body{
 	text-align: center;
 	top: 0;
 	left: -16px;
+}
+
+
+/******************header-nav*******************/
+
+.header-nav-wrap ul li a,.header .header-nav h2,.header .header-nav .line-a{
+	font-size: 16px;  
+	color: #FFF;
+	font-weight: bold;
+	text-align: center;
+}
+.header .header-nav h2{
+	width: 190px;
+	display: inline-block;
+    background: #ff5000;
+    cursor: pointer;
+}
+.header .header-nav ul{
+	list-style: none;
+	display: inline-block;
+}
+.header .header-nav ul li{
+	list-style: none;
+	display: inline-block;
+}	
+.header .header-nav ul li:hover{
+	background: #FF4400;
+	border-radius: 15px;
+}
+
+.header-nav{
+	width:100%;
+	height: 30px;
+	line-height: 30px;
+	background: linear-gradient(to right,#ff9000 0,#ff5000 100%) repeat-x;
+}
+.header-nav-wrap{
+	width: 1190px;
+	height: 30px;
+	line-height: 30px;
+	margin: 0 auto;
+}
+
+.header-nav-left li{
+	margin: 0 3px;
+    text-align: center;
+    padding: 0 4px;
+    cursor: pointer;
+}
+.header-nav-middle li,.header-nav-right li,.header .header-nav .line-a{
+	margin-left: 7px;
+	cursor: pointer;
 }

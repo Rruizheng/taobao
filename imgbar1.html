@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>imgbar1</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css">
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<style>
+			
+.header-imgbar1{
+	/*overflow: hidden;*/
+	position: relative;
+    width: 520px;
+    height: 280px;
+}
+
+.header-imgbar1 .header-imgbar1-box {
+	position: relative;
+	height: 280px;
+    overflow: hidden;
+    width: 3640px;
+    left: 0px;
+    opacity: 1;
+}
+.header-imgbar1 .header-imgbar1-box li{
+	width: 520px;
+    height: 280px;
+    display: inline-block;
+    float: left;
+}
+
+/*底部标号*/
+.header-imgbar1 .header-imgbar1-dot{
+	border-radius: 10px;
+    position: absolute;
+    bottom: 15px;
+    height: 13px;
+    text-align: center;
+    font-size: 0;
+    left: 50%;
+    margin-left: -39px;
+    background-color: rgba(255,255,255,.3);
+    z-index: 1;
+}
+
+.header-imgbar1 .header-imgbar1-dot li{
+	display: inline-block;
+	margin: 3px;
+}
+.header-imgbar1 .header-imgbar1-dot li a{
+	display: block;
+	padding-top: 8px;
+	width: 8px;
+	height: 0;
+	border-radius: 50%;
+	color: #3c3c3c;
+	background: #FFF;
+}
+.header-imgbar1 .header-imgbar1-dot li a.current{
+	background: #FF4400;
+}
+
+/*左右翻页*/
+
+.header-imgbar1 .header-imgbar1-turnbtn a{
+	position: absolute;
+    top: 45%;
+    background-color: rgba(0,0,0,.3);
+    display: none;
+}
+.header-imgbar1 .header-imgbar1-turnbtn.current{
+	display: block;
+}
+.header-imgbar1 .header-imgbar1-turnbtn a i{
+	display: block;
+    height: 30px;
+    width: 20px;
+    line-height: 30px;
+    color: #fff;
+    font-size: 25px;
+    text-align: center;
+}
+.header-imgbar1 .header-imgbar1-turnbtn a.leftbtn{
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	left: 0;
+}
+.header-imgbar1 .header-imgbar1-turnbtn a.leftbtn i{
+	
+}
+.header-imgbar1 .header-imgbar1-turnbtn a.rightbtn{
+	right: 0;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+}
+
+		</style>
+	</head>
+	<body>
+		<div class="header-imgbar1">
+		    <div class="header-imgbar1-list">
+		        <ul class="header-imgbar1-box">
+		            <li><a href="#"><img src="img/imgbar1/1.webp" width="520" height="280" /></a></li>
+		           <li><a href="#"><img src="img/imgbar1/2.webp" width="520" height="280" /></a></li>
+		           <li><a href="#"><img src="img/imgbar1/3.webp" width="520" height="280" /></a></li>
+		            <li><a href="#"><img src="img/imgbar1/4.jpg" width="520" height="280" /></a></li>
+		            <li><a href="#"><img src="img/imgbar1/5.jpg" width="520" height="280" /></a></li>
+		             <li><a href="#"><img src="img/imgbar1/1.webp" width="520" height="280" /></a></li>
+		        </ul>
+		        <div class="header-imgbar1-turnbtn">
+		        	<a href="#" class="leftbtn">
+		        		<i class="fa fa-angle-left "></i>
+		        	</a>
+		        	<a href="#" class="rightbtn">
+		        		<i class="fa fa-angle-right"></i>
+		        	</a>
+		        </div>
+		        <ul class="header-imgbar1-dot">
+		        	<li>
+		        		<a href="#">1</a>
+		        	</li>
+		        	<li>
+		        		<a href="#">2</a>
+		        	</li>
+		        	<li>
+		        		<a href="#">3</a>
+		        	</li>
+		        	<li>
+		        		<a href="#">4</a>
+		        	</li>
+		        	<li>
+		        		<a href="#">5</a>
+		        	</li>
+		        </ul>
+		    </div>
+		</div>
+		<script type="text/javascript">
+			
+			/*面向对象法的函数*/
+			var $ = function(id){
+				return typeof id === "string" ? document.getElementById(id) : id;
+			}
+			
+			var $$ = function(tagname,oParent){
+				return  (oParent || document).getElementsByTagName(tagname);
+			}
+			
+			var $$$ = function(sClass,oParent){
+				var aClass=[];
+				var reClass = new RegExp("(^| )"+sClass + "( |$)");
+				var aElem = this.$$("*",oParent);
+				for(var i=0;i<aElem.length;i++){
+					reClass.test(aElem[i].className)&&aClass.push(aElem[i]);
+				}
+				return aClass;
+			}
+		
+			
+			/*创建函数对象*/
+			var AutoPlay = function(imgbox){this.initialize(imgbox)};
+			/*给函数对象的原型赋予属性*/
+			AutoPlay.prototype = {
+				/*初始化*/
+				initialize: function(imgbox){
+					var oThis = this;					
+					this.oImgbox = $$$(imgbox,document)[0];
+					this.oBox = $$("div",this.oImgbox)[0];
+					this.oUl = $$("ul",this.oBox)[0];
+					this.oBtn = $$("ul",this.oBox)[1];
+					this.aImg = $$("img",this.oUl);
+					this.timer = null;
+					this.iNow = 0;
+					this.AutoTimer = null;
+					this.aBtn = $$("a",this.oBtn);
+					this.leftBtn = $$$("leftbtn",this.oBox)[0];
+					this.rightBtn = $$$("rightbtn",this.oBox)[0];
+					
+					this.toggle();
+					this.autoTimer = setInterval(function(){
+						oThis.next();
+					},4000);
+					
+					this.oBox.onmouseover = function(){
+						clearInterval(oThis.autoTimer);
+						oThis.leftBtn.style.display = "block";
+						oThis.rightBtn.style.display = "block";
+					}
+					this.oBox.onmouseout = function(){
+						oThis.autoTimer = setInterval(function(){
+							oThis.next();
+						},3000);
+						oThis.leftBtn.style.display = "none";
+						oThis.rightBtn.style.display = "none";
+					}
+					this.rightBtn.onclick = function(){
+						oThis.next();
+					}
+					this.leftBtn.onclick = function(){
+						oThis.before();
+					}
+					for(var i=0;i<this.aImg.length;i++){
+						this.aBtn[i].index = i;
+						this.aBtn[i].onmouseover = function(){
+							oThis.iNow = this.index;
+							oThis.toggle();
+						}
+					}
+				},
+				
+				toggle: function(){
+					for(var i=0; i<this.aBtn.length;i++){
+						this.aBtn[i].className="";
+					}
+					this.aBtn[this.iNow].className = "current";
+					this.doMove(-(this.iNow*this.aImg[0].offsetWidth));
+				},
+				next: function(){
+					this.iNow ++;
+					this.iNow == this.aBtn.length && (this.iNow=0);
+					this.toggle();
+				},
+				before: function(){
+					this.iNow ==0?(this.iNow=this.aBtn.length-1):(this.iNow --);
+					this.toggle();
+				},
+				doMove: function(iTarget) {
+					var oThis = this;
+					clearInterval(oThis.timer);
+					oThis.timer = setInterval(function(){
+						var iSpeed = (iTarget - oThis.oUl.offsetLeft)/5;
+						iSpeed = iSpeed > 0 ?Math.ceil(iSpeed) : Math.floor(iSpeed);
+						oThis.oUl.offsetLeft == iTarget ? clearInterval(oThis.timer) : (oThis.oUl.style.left = oThis.oUl.offsetLeft + iSpeed + "px");
+					},30);
+				}
+			};
+			window.onload = function(){
+				new AutoPlay("header-imgbar1");
+			}
+			
+			
+		</script>
+	</body>
+</html>

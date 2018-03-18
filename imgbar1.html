@@ -7,9 +7,9 @@
 		<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 		<style>
-			
+/***************header-imgbar1********************/			
 .header-imgbar1{
-	/*overflow: hidden;*/
+	overflow: hidden;
 	position: relative;
     width: 520px;
     height: 280px;
@@ -63,16 +63,16 @@
 
 /*左右翻页*/
 
-.header-imgbar1 .header-imgbar1-turnbtn a{
+.header-imgbar1 .header-imgbar1-turnbtn a,.header-imgbar2 .header-imgbar2-turnbtn a{
 	position: absolute;
     top: 45%;
     background-color: rgba(0,0,0,.3);
     display: none;
 }
-.header-imgbar1 .header-imgbar1-turnbtn.current{
+.header-imgbar1 .header-imgbar1-turnbtn.current,.header-imgbar2 .header-imgbar2-turnbtn.current{
 	display: block;
 }
-.header-imgbar1 .header-imgbar1-turnbtn a i{
+.header-imgbar1 .header-imgbar1-turnbtn a i,.header-imgbar2 .header-imgbar2-turnbtn a i{
 	display: block;
     height: 30px;
     width: 20px;
@@ -81,19 +81,180 @@
     font-size: 25px;
     text-align: center;
 }
-.header-imgbar1 .header-imgbar1-turnbtn a.leftbtn{
+.header-imgbar1 .header-imgbar1-turnbtn a.leftbtn,.header-imgbar2 .header-imgbar2-turnbtn a.leftbtn{
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
 	left: 0;
 }
-.header-imgbar1 .header-imgbar1-turnbtn a.leftbtn i{
-	
-}
-.header-imgbar1 .header-imgbar1-turnbtn a.rightbtn{
+
+.header-imgbar1 .header-imgbar1-turnbtn a.rightbtn,.header-imgbar2 .header-imgbar2-turnbtn a.rightbtn{
 	right: 0;
 	border-top-left-radius: 15px;
 	border-bottom-left-radius: 15px;
 }
+
+/***************header-imgbar2********************/	
+.imgbar2-wrap{
+	position: relative;
+    width: 520px;
+    height: 230px;
+    margin-top: 1px;
+    overflow: hidden;
+}
+.imgbar2-wrap .header-imgbar-logo{
+	font-size: 14px;
+    padding-top: 11px;
+    border-bottom: 3px solid #ff1648;
+    position: relative;
+    background-color: #f1f1f1;
+    overflow: hidden;
+    z-index: -1;
+}
+
+
+.imgbar2-wrap .header-imgbar-logo .imgbar-logo-inner{
+	height: 18px;
+    line-height: 18px;
+    position: relative;
+   
+}
+.imgbar2-wrap .header-imgbar-logo .imgbar-logo-inner img{
+	width: 136px;
+    height: 21px;
+    position: absolute;
+    bottom: -3px;
+    
+}
+.imgbar2-wrap .header-imgbar-logo .imgbar-logo-inner em{
+	font-size: 12px;
+    color: #666;
+    position: relative;
+    margin-left: 145px;	
+    font-style: normal
+}
+.imgbar2-wrap .header-imgbar-logo .imgbar-logo-inner strong{
+	position: absolute;
+    right: 0;
+    font-family: sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+.imgbar2-wrap .header-imgbar-logo .imgbar-logo-inner .imgbar2-now-count{
+	color: red;
+}
+
+.header-imgbar2{
+	position: relative;
+    width: 520px;
+    height: 201px;
+    z-index: 2;
+}
+
+.header-imgbar2 .header-imgbar2-box {
+	position: relative;
+	height: 201px;
+    overflow: hidden;
+    width: 3120px;
+    left: 0px;
+    background: #FFF;
+   
+}
+.header-imgbar2 .header-imgbar2-box li{
+	width: 520px;
+    height: 201px;
+    display: inline-block;
+    float: left;
+}
+
+.header-imgbar2 .header-imgbar2-dot{
+	position: absolute;
+	background: black;
+    top: -3px;
+    height: 3px;
+    line-height: 0;
+    width: 520px;
+    font-size: 0;
+    z-index: 1;
+}
+.header-imgbar2 .header-imgbar2-dot a {
+	display: inline-block;
+    width: 86.5px;
+    height: 3px;
+    overflow: hidden;
+    margin: 0;
+    background: #ff1648;
+    line-height: 0;
+    font-size: 0;
+}
+
+.header-imgbar2 .header-imgbar2-dot a.current{
+	background: black;	
+}
+
+
+
+.header-imgbar2 .header-imgbar2-box li.imgbar2-a a{
+	float: left;
+    width: 129px;
+    height: 57px;
+    text-align: center;
+    border: 0;
+    padding: 5px 0;
+    border-right: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    overflow: hidden;
+} 
+.header-imgbar2 .header-imgbar2-box li.imgbar2-a a img{
+    width: 84px;
+    height: auto;
+    margin-top: 10px;
+}
+.header-imgbar2 .header-imgbar2-box li.imgbar2-b a,.header-imgbar2 .header-imgbar2-box li.imgbar2-f a{
+    width: 251px;
+    height: 190px;
+    overflow: hidden;
+    margin-left: 6px;
+} 
+.header-imgbar2 .header-imgbar2-box li.imgbar2-b a img,.header-imgbar2 .header-imgbar2-box li.imgbar2-f a img{
+	width: 251px;
+    height: 190px;
+    margin-top: 6px;
+}
+
+.header-imgbar2 .header-imgbar2-box li.imgbar2-c a{
+	width: 173px;
+	height: 100px;
+	overflow: hidden;
+    border-left: 1px solid #ebebeb;
+    margin-left: -1px;
+    border-bottom: 1px solid #ebebeb;
+    float: left;
+}
+.header-imgbar2 .header-imgbar2-box li.imgbar2-c a img{
+	width: 173px;
+}
+.header-imgbar2 .header-imgbar2-box li.imgbar2-c a:nth-child(1){
+    height: 201px; 
+    border: none;
+} 
+
+.header-imgbar2 .header-imgbar2-box li.imgbar2-d a,.header-imgbar2 .header-imgbar2-box li.imgbar2-e a{
+    width: 129px;
+    height: 201px;
+    overflow: hidden;
+    border-left: 1px solid #ebebeb;
+    float: left;
+} 
+.header-imgbar2 .header-imgbar2-box li.imgbar2-d a img,.header-imgbar2 .header-imgbar2-box li.imgbar2-e a img{
+   width: 129px;
+   height: 201px;
+}
+.header-imgbar2 .header-imgbar2-box li.imgbar2-c a:nth-child(1),.header-imgbar2 .header-imgbar2-box li.imgbar2-e a:nth-child(1){
+    height: 201px; 
+    width: 130px;
+    border: none;
+} 
+
 
 		</style>
 	</head>
@@ -106,7 +267,6 @@
 		           <li><a href="#"><img src="img/imgbar1/3.webp" width="520" height="280" /></a></li>
 		            <li><a href="#"><img src="img/imgbar1/4.jpg" width="520" height="280" /></a></li>
 		            <li><a href="#"><img src="img/imgbar1/5.jpg" width="520" height="280" /></a></li>
-		             <li><a href="#"><img src="img/imgbar1/1.webp" width="520" height="280" /></a></li>
 		        </ul>
 		        <div class="header-imgbar1-turnbtn">
 		        	<a href="#" class="leftbtn">
@@ -133,6 +293,106 @@
 		        		<a href="#">5</a>
 		        	</li>
 		        </ul>
+		    </div>
+		</div>
+		
+		<div class="imgbar2-wrap">
+			<div class="header-imgbar-logo">
+				<div class="imgbar-logo-inner">
+					<span class="logo">
+						<img src="img/imgbar2/logo.png" alt="" />
+					</span>
+					<em>理想生活上天猫</em>
+					<strong>
+						<i class="imgbar2-now-count">1</i>
+						/6
+					</strong>
+				</div>
+			</div>
+			
+			<div class="header-imgbar2">
+			    <div class="header-imgbar2-list">
+			    	
+			        <ul class="header-imgbar2-box">
+			            <li class="imgbar2-a">
+			            	<a href="#">
+			            		<img src="img/imgbar2/a1.jpg" alt="" /></a>
+			            	<a href="#">
+			            		<img src="img/imgbar2/a2.png" alt="" /></a>
+			            	<a href="#">
+			            		<img src="img/imgbar2/a3.png" alt="" /></a>
+			            	<a href="#">
+			            		<img src="img/imgbar2/a4.jpg" alt="" /></a>
+			            	<a href="#">
+			            		<img src="img/imgbar2/a5.jpg" alt="" /></a>
+			            	<a href="#">
+			            		<img src="img/imgbar2/a6.png" alt="" /></a>
+			            	<a href="#">
+			            		<img src="img/imgbar2/a7.jpg" alt="" /></a>
+			            	<a href="#">
+			            		<img src="img/imgbar2/a8.jpg" alt="" /></a>
+			            	<a href="#">
+			            		<img src="img/imgbar2/a9.jpg" alt="" /></a>
+			            	<a href="#">
+			            		<img src="img/imgbar2/a10.png" alt="" /></a>
+			            	<a href="#">
+			            		<img src="img/imgbar2/a11.png" alt="" /></a>
+			            	<a href="#">
+			            		<img src="img/imgbar2/a12.jpg" alt="" /></a>
+			            </li>
+			           <li class="imgbar2-b">
+			           		<a href="#"><img src="img/imgbar2/b1.jpg" alt="" /></a>
+			           		<a href="#"><img src="img/imgbar2/b2.jpg" alt="" /></a>
+			           </li>
+			           <li class="imgbar2-c">
+			           		<a href="#"><img src="img/imgbar2/c1.jpg" /></a>
+			           		<a href="#"><img src="img/imgbar2/c2.jpg" /></a>
+			           		<a href="#"><img src="img/imgbar2/c3.jpg" /></a>
+			           		<a href="#"><img src="img/imgbar2/c4.jpg" /></a>
+			           		<a href="#"><img src="img/imgbar2/c5.jpg" /></a>
+			           </li>
+			            <li class="imgbar2-d">
+			           		<a href="#"><img src="img/imgbar2/d1.jpg" alt="" /></a>
+			           		<a href="#"><img src="img/imgbar2/d2.jpg" alt="" /></a>
+			           		<a href="#"><img src="img/imgbar2/d3.jpg" alt="" /></a>
+			           		<a href="#"><img src="img/imgbar2/d4.jpg" alt="" /></a>
+			           	</li>
+			           <li class="imgbar2-e">
+			           		<a href="#"><img src="img/imgbar2/e1.jpg" alt="" /></a>
+			           		<a href="#"><img src="img/imgbar2/e2.jpg" alt="" /></a>
+			           		<a href="#"><img src="img/imgbar2/e3.jpg" alt="" /></a>
+			           		<a href="#"><img src="img/imgbar2/e4.jpg" alt="" /></a>
+			           	</li>
+			            <li class="imgbar2-f">
+			           		<a href="#"><img src="img/imgbar2/f1.jpg" alt="" /></a>
+			           		<a href="#"><img src="img/imgbar2/f2.jpg" alt="" /></a>
+			           </li>
+			        </ul>
+			        
+			        <ul class="header-imgbar2-dot">
+			        	
+			        		<a href="#">1</a>
+			        	
+			        		<a href="#">2</a>
+			        	
+			        		<a href="#">3</a>
+			        	
+			        		<a href="#">4</a>
+			        	
+			        		<a href="#">5</a>
+			        		
+			        		<a href="#">6</a>
+			        
+			        </ul>
+			        <div class="header-imgbar2-turnbtn">
+			        	<a href="#" class="leftbtn">
+			        		<i class="fa fa-angle-left "></i>
+			        	</a>
+			        	<a href="#" class="rightbtn">
+			        		<i class="fa fa-angle-right"></i>
+			        	</a>
+			        </div>
+			    </div>   
 		    </div>
 		</div>
 		<script type="text/javascript">
@@ -168,13 +428,14 @@
 					this.oBox = $$("div",this.oImgbox)[0];
 					this.oUl = $$("ul",this.oBox)[0];
 					this.oBtn = $$("ul",this.oBox)[1];
-					this.aImg = $$("img",this.oUl);
+					this.aImg = $$("li",this.oUl);
 					this.timer = null;
 					this.iNow = 0;
 					this.AutoTimer = null;
 					this.aBtn = $$("a",this.oBtn);
 					this.leftBtn = $$$("leftbtn",this.oBox)[0];
 					this.rightBtn = $$$("rightbtn",this.oBox)[0];
+					
 					
 					this.toggle();
 					this.autoTimer = setInterval(function(){
@@ -199,7 +460,7 @@
 					this.leftBtn.onclick = function(){
 						oThis.before();
 					}
-					for(var i=0;i<this.aImg.length;i++){
+					for(var i=0;i<this.aBtn.length;i++){
 						this.aBtn[i].index = i;
 						this.aBtn[i].onmouseover = function(){
 							oThis.iNow = this.index;
@@ -214,6 +475,7 @@
 					}
 					this.aBtn[this.iNow].className = "current";
 					this.doMove(-(this.iNow*this.aImg[0].offsetWidth));
+					
 				},
 				next: function(){
 					this.iNow ++;
@@ -235,7 +497,21 @@
 				}
 			};
 			window.onload = function(){
-				new AutoPlay("header-imgbar1");
+			   var imgbar1 = new AutoPlay("header-imgbar1");
+			   var imgbar2 = new AutoPlay("header-imgbar2");
+			
+				imgbar2.toggle = function(){
+					this.count = $$$("imgbar2-now-count",document)[0];
+					for(var i=0; i<this.aBtn.length;i++){
+						this.aBtn[i].className="";
+					}
+					this.aBtn[this.iNow].className = "current";
+					this.doMove(-(this.iNow*this.aImg[0].offsetWidth));
+					this.count.innerHTML = this.iNow+1;
+				}
+				
+			   
+				
 			}
 			
 			

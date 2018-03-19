@@ -105,13 +105,14 @@
     margin-top: 10px;
 }
 .header-bottombar{
-	background: green;
+	background: #FFF;
+	top: 10px;
 	clear: both;
 	position: relative;
-    padding: 14px 14px 12px 20px;
-    margin-top: 10px; 
+    padding: 14px 14px 12px 20px; 
     width: 856px;
     height: 73px;
+    overflow: hidden;
 }
 
 .header-rightbar{
@@ -508,6 +509,95 @@
     width: 130px;
     border: none;
 } 
+
+/*head-hotimg*/
+.header-hotimg .header-hotimg2-wrap{
+	margin-top: 1px;
+    height: 230px;
+    display: block;
+}
+.header-hotimg .header-hotimg2-wrap h5{
+	font-size: 12px;
+    font-weight: 400;
+    background: #f1f1f1;
+    color: #a1a1a1;
+    line-height: 24px;
+    padding-top: 6px;
+}
+
+
+/*header-bottombar*/
+.header-bottombar .toutiao{
+	width: 180px;
+    height: 73px;
+    float: left;
+}
+.header-bottombar .toutiao h3 img{
+	position: absolute;
+	top: 14px;
+}
+.header-bottombar .toutiao h3 p{
+	margin-top: 42px;
+}
+
+.header-bottombar .header-imgbar3{
+	height: 73px;
+	width: 676px;
+	position: relative;
+	overflow: hidden;
+}
+.header-bottombar .header-imgbar3-box {
+	height: 219px;
+	width: 676px;
+	position: relative;
+	overflow: hidden;
+}
+.header-bottombar .header-imgbar3-box li{
+	display: block;
+    height: 73px;
+}
+.header-bottombar .header-imgbar3-box li a{
+	height: 73px;
+	width: 676px;
+	cursor: pointer;
+	overflow: hidden;
+}
+.header-bottombar .header-imgbar3-box li a:hover h4{
+	color: red;
+}
+.header-bottombar .header-imgbar3-box li a:hover img{
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	transition: opacity .2s;
+}
+.header-bottombar .header-imgbar3-box li a img{
+	float: left;
+    height: 73px;
+    width: 130px;
+}
+.header-bottombar .header-imgbar3-box li a h4{
+	position: relative;
+	top: 2px;
+    left: 15px;
+    color: #333;
+    height: 28px;
+    overflow: hidden;
+    display: block;
+    line-height: 28px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.header-bottombar .header-imgbar3-box li a p{
+	position: relative;
+	left: 15px;
+    color: #999;
+    height: 36px;
+    width: 532px;
+    overflow: hidden;
+    line-height: 18px;
+    font-size: 14px;
+}
+
 		</style>
 	</head>
 	<body>
@@ -3374,11 +3464,51 @@
 						</div>
 						<div class="header-hotimg">
 							<img src="img/imgbar2/img1.webp" alt="" class="header-hotimg1" />
-							<img src="img/imgbar2/img2.jpg" alt="" class="header-hotimg2" />
+							<div class="header-hotimg2-wrap">
+								<h5>
+								今日热卖
+								</h5>
+								<img src="img/imgbar2/img2.jpg" alt="" class="header-hotimg2" />
+							</div>
+							
 						</div>
 					</div>
 					<div class="header-bottombar">
-						
+						<div class="toutiao">
+							<h3>
+								<img src="img/imgbar3/logo.png" alt="" />
+								<p>让你的生活更有趣</p>
+							</h3>
+							
+						</div>
+						<div class="header-imgbar3">
+							<ul class="header-imgbar3-box">
+					            <li>
+					            	<a href="#"><img src="img/imgbar3/1.webp" />
+					            	<h4>长安版路虎仅8万多，H6见了不知所措！</h4>
+					            	<p>
+					            		江湖有云：狭路相逢勇者胜！是的，竞争激烈的汽车市场如同刀光剑影的江湖一般，“拳怕少壮”这四个字对于各路车企而言依然适用。尤其是哈弗以及长安这两大门派，各个细分市场如长安CS15/35/75/95VS哈弗H1/H2/H6/H9，都是旗鼓相当，可谓是针锋对麦芒！尤其是在10万元左右紧
+					            	</p>
+					            	</a>
+					            </li>
+					           <li>
+					           	 <a href="#"><img src="img/imgbar3/2.webp"/>
+					           		<h4>皇冠概念车/新世纪等 2017东京车展前瞻</h4>
+					            	<p>
+					            		[汽车之家新闻]两年一度的东京车展即将在10月25日正式开幕，作为日系厂家的本土主场，本届车展上丰田、本田、日产、铃木、雷克萨斯、马自达、斯巴鲁等厂家都将在车展上发布自己的最新产品，包括全新皇冠概念车、丰田TjCruiser、丰田GRHVSPORTS、全新Supra、全新世纪、三
+					            	</p>
+					          	 </a>
+					           </li>
+					           <li>
+					           	<a href="#"><img src="img/imgbar3/3.webp"/>
+						           	<h4>家庭主妇偷懒哲学，你需要这几样！</h4>
+					            	<p>
+					            		作为家庭主妇，平时要干的事可真不少，一边忙着工作还要一边操持着家务，尤其是做饭，这可是个功夫活儿，还要变幻着花样，满足家人的胃口，今天小编就为各位家庭“煮”妇推荐几款能偷懒的神器，让你今天下厨房不再发愁。1.美味面条九阳面条机三分钟快速出面，刷牙的时间就制作好了呢！省时省力又省心
+					            	</p>
+					           	</a>
+					           </li>
+					        </ul>
+						</div>
 					</div>
 				</div>
 				
@@ -3469,7 +3599,6 @@
 					}
 					this.aBtn[this.iNow].className = "current";
 					this.doMove(-(this.iNow*this.aImg[0].offsetWidth));
-					
 				},
 				next: function(){
 					this.iNow ++;
@@ -3487,6 +3616,56 @@
 						var iSpeed = (iTarget - oThis.oUl.offsetLeft)/5;
 						iSpeed = iSpeed > 0 ?Math.ceil(iSpeed) : Math.floor(iSpeed);
 						oThis.oUl.offsetLeft == iTarget ? clearInterval(oThis.timer) : (oThis.oUl.style.left = oThis.oUl.offsetLeft + iSpeed + "px");
+					},30);
+				}
+			};
+			
+			var AutoPlay2 = function(imgbox){this.initialize(imgbox)};
+			/*给函数对象的原型赋予属性*/
+			AutoPlay2.prototype = {
+				/*初始化*/
+				initialize: function(imgbox){
+					var oThis = this;					
+					this.oBox = $$$(imgbox,document)[0];
+					this.oUl = $$("ul",this.oBox)[0];
+					this.aImg = $$("li",this.oUl);
+					this.timer = null;
+					this.iNow = 0;
+					this.AutoTimer = null;
+	
+					this.toggle();
+					this.autoTimer = setInterval(function(){
+						oThis.next();
+					},4000);
+					
+					this.oBox.onmouseover = function(){
+						clearInterval(oThis.autoTimer);
+						
+					}
+					this.oBox.onmouseout = function(){
+						oThis.autoTimer = setInterval(function(){
+							oThis.next();
+						},3000);
+		
+					}
+
+				},
+				
+				toggle: function(){
+					this.doMove(-(this.iNow*this.aImg[0].offsetHeight));
+				},
+				next: function(){
+					this.iNow ++;
+					this.iNow == this.aImg.length && (this.iNow=0);
+					this.toggle();
+				},
+				doMove: function(iTarget) {
+					var oThis = this;
+					clearInterval(oThis.timer);
+					oThis.timer = setInterval(function(){
+						var iSpeed = (iTarget - oThis.oUl.offsetTop)/5;
+						iSpeed = iSpeed > 0 ?Math.ceil(iSpeed) : Math.floor(iSpeed);
+						oThis.oUl.offsetTop == iTarget ? clearInterval(oThis.timer) : (oThis.oUl.style.top = oThis.oUl.offsetTop + iSpeed + "px");
 					},30);
 				}
 			};
@@ -3552,7 +3731,8 @@
 				
 			   var imgbar1 = new AutoPlay("header-imgbar1");
 			   var imgbar2 = new AutoPlay("header-imgbar2");
-			
+			   var imgbar3 = new AutoPlay2("header-imgbar3");
+			   
 				imgbar2.toggle = function(){
 					this.count = $$$("imgbar2-now-count",document)[0];
 					for(var i=0; i<this.aBtn.length;i++){

@@ -1,3 +1,152 @@
+var $ = function(id){
+	return typeof id === "string" ? document.getElementById(id) : id;
+}
+
+var $$ = function(tagname,oParent){
+	return  (oParent || document).getElementsByTagName(tagname);
+}
+
+var $$$ = function(sClass,oParent){
+	var aClass=[];
+	var reClass = new RegExp("(^| )"+sClass + "( |$)");
+	var aElem = this.$$("*",oParent);
+	for(var i=0;i<aElem.length;i++){
+		reClass.test(aElem[i].className)&&aClass.push(aElem[i]);
+	}
+	return aClass;
+}
+
+
+/*创建函数对象*/
+var AutoPlay = function(imgbox){this.initialize(imgbox)};
+/*给函数对象的原型赋予属性*/
+AutoPlay.prototype = {
+	/*初始化*/
+	initialize: function(imgbox){
+		var oThis = this;					
+		this.oImgbox = $$$(imgbox,document)[0];
+		this.oBox = $$("div",this.oImgbox)[0];
+		this.oUl = $$("ul",this.oBox)[0];
+		this.oBtn = $$("ul",this.oBox)[1];
+		this.aImg = $$("li",this.oUl);
+		this.timer = null;
+		this.iNow = 0;
+		this.AutoTimer = null;
+		this.aBtn = $$("a",this.oBtn);
+		this.leftBtn = $$$("leftbtn",this.oBox)[0];
+		this.rightBtn = $$$("rightbtn",this.oBox)[0];
+		
+		
+		this.toggle();
+		this.autoTimer = setInterval(function(){
+			oThis.next();
+		},4000);
+		
+		this.oBox.onmouseover = function(){
+			clearInterval(oThis.autoTimer);
+			oThis.leftBtn.style.display = "block";
+			oThis.rightBtn.style.display = "block";
+		}
+		this.oBox.onmouseout = function(){
+			oThis.autoTimer = setInterval(function(){
+				oThis.next();
+			},3000);
+			oThis.leftBtn.style.display = "none";
+			oThis.rightBtn.style.display = "none";
+		}
+		this.rightBtn.onclick = function(){
+			oThis.next();
+		}
+		this.leftBtn.onclick = function(){
+			oThis.before();
+		}
+		for(var i=0;i<this.aBtn.length;i++){
+			this.aBtn[i].index = i;
+			this.aBtn[i].onmouseover = function(){
+				oThis.iNow = this.index;
+				oThis.toggle();
+			}
+		}
+	},
+	
+	toggle: function(){
+		for(var i=0; i<this.aBtn.length;i++){
+			this.aBtn[i].className="";
+		}
+		this.aBtn[this.iNow].className = "current";
+		this.doMove(-(this.iNow*this.aImg[0].offsetWidth));
+		
+	},
+	next: function(){
+		this.iNow ++;
+		this.iNow == this.aBtn.length && (this.iNow=0);
+		this.toggle();
+	},
+	before: function(){
+		this.iNow ==0?(this.iNow=this.aBtn.length-1):(this.iNow --);
+		this.toggle();
+	},
+	doMove: function(iTarget) {
+		var oThis = this;
+		clearInterval(oThis.timer);
+		oThis.timer = setInterval(function(){
+			var iSpeed = (iTarget - oThis.oUl.offsetLeft)/5;
+			iSpeed = iSpeed > 0 ?Math.ceil(iSpeed) : Math.floor(iSpeed);
+			oThis.oUl.offsetLeft == iTarget ? clearInterval(oThis.timer) : (oThis.oUl.style.left = oThis.oUl.offsetLeft + iSpeed + "px");
+		},30);
+	}
+};
+
+var AutoPlay2 = function(imgbox){this.initialize(imgbox)};
+/*给函数对象的原型赋予属性*/
+AutoPlay2.prototype = {
+	/*初始化*/
+	initialize: function(imgbox){
+		var oThis = this;					
+		this.oBox = $$$(imgbox,document)[0];
+		this.oUl = $$("ul",this.oBox)[0];
+		this.aImg = $$("li",this.oUl);
+		this.timer = null;
+		this.iNow = 0;
+		this.AutoTimer = null;
+
+		this.toggle();
+		this.autoTimer = setInterval(function(){
+			oThis.next();
+		},4000);
+		
+		this.oBox.onmouseover = function(){
+			clearInterval(oThis.autoTimer);
+			
+		}
+		this.oBox.onmouseout = function(){
+			oThis.autoTimer = setInterval(function(){
+				oThis.next();
+			},3000);
+
+		}
+
+	},
+	
+	toggle: function(){
+		this.doMove(-(this.iNow*this.aImg[0].offsetHeight));
+	},
+	next: function(){
+		this.iNow ++;
+		this.iNow == this.aImg.length && (this.iNow=0);
+		this.toggle();
+	},
+	doMove: function(iTarget) {
+		var oThis = this;
+		clearInterval(oThis.timer);
+		oThis.timer = setInterval(function(){
+			var iSpeed = (iTarget - oThis.oUl.offsetTop)/5;
+			iSpeed = iSpeed > 0 ?Math.ceil(iSpeed) : Math.floor(iSpeed);
+			oThis.oUl.offsetTop == iTarget ? clearInterval(oThis.timer) : (oThis.oUl.style.top = oThis.oUl.offsetTop + iSpeed + "px");
+		},30);
+	}
+};
+
 window.onload = function()
 {
 	
@@ -146,4 +295,56 @@ window.onload = function()
 			};
 		}
 	})();
+	
+	/*侧边栏*/
+	(function sidebar(){
+		var oHeadSidBar = document.getElementsByClassName("header-sidebar")[0];
+		var oLi = oHeadSidBar.getElementsByClassName("side-li")[0].getElementsByTagName("li");
+		var oBox = oHeadSidBar.getElementsByClassName("hiden-box");
+			
+		for(var i=0;i<oLi.length;i++){					
+			oLi[i].index = i;
+			oLi[i].onmouseover= function(){
+				for(var y=0;y<oBox.length;y++){
+					oBox[y].style.display = "none"
+				} 
+				for(var y=0;y<oLi.length;y++){
+					oLi[y].style.backgroundColor="#FFF";
+				}
+				oBox[this.index].style.display="block";
+				oBox[this.index].index = this.index;
+				this.style.backgroundColor="#ffe4dc";
+				oBox[this.index].onmouseleave = function(){
+					this.style.display = "none";
+					oLi[this.index].style.backgroundColor = "#FFF";
+				}
+				this.onmouseleave = function(event){
+					event = event || window.event;
+					var oLix = this.getBoundingClientRect().left;
+					if(event.clientX <= oLix){
+						for(var y=0;y<oBox.length;y++){
+							oBox[y].style.display = "none";
+						}
+						for(var y=0;y<oLi.length;y++){
+							oLi[y].style.backgroundColor="#FFF";
+						}
+					}
+				}
+			}
+		}
+	})();
+	
+   var imgbar1 = new AutoPlay("header-imgbar1");
+   var imgbar2 = new AutoPlay("header-imgbar2");
+   var imgbar3 = new AutoPlay2("header-imgbar3");
+
+	imgbar2.toggle = function(){
+		this.count = $$$("imgbar2-now-count",document)[0];
+		for(var i=0; i<this.aBtn.length;i++){
+			this.aBtn[i].className="";
+		}
+		this.aBtn[this.iNow].className = "current";
+		this.doMove(-(this.iNow*this.aImg[0].offsetWidth));
+		this.count.innerHTML = this.iNow+1;
+	}
 }

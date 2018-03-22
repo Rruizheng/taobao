@@ -149,7 +149,6 @@ AutoPlay2.prototype = {
 
 window.onload = function()
 {
-	
 	/*交换选择项目*/
 	function changeTitle(oLi1,oLi2){
 		oLi1.onclick = function(){
@@ -187,7 +186,7 @@ window.onload = function()
 	}
 	function removeClass(obj,sClass){
 		var oName = obj.className;
-		oName = oName.replace(sClass,"");
+		oName = oName.replace("sClass","");
 		obj.className = oName;
 	}
 	
@@ -345,8 +344,7 @@ window.onload = function()
 			}
 		}
 	})();
-	
-	
+
 /*轮播组件函数*/
    var imgbar1 = new AutoPlay("header-imgbar1");
    var imgbar2 = new AutoPlay("header-imgbar2");
@@ -360,57 +358,13 @@ window.onload = function()
 		this.aBtn[this.iNow].className = "current";
 		this.doMove(-(this.iNow*this.aImg[0].offsetWidth));
 		this.count.innerHTML = this.iNow+1;
-	};
-   
-   (function infoBox(){
-   		var oInfo = document.getElementsByClassName("right-info-box")[0];
-   		var oUl = document.getElementsByClassName("right-tab-nav")[0];
-   		var oLi = oUl.getElementsByTagName("li");
-   		var oBox = oInfo.getElementsByTagName("div");
-   		
-   		for(var i=0;i<oLi.length;i++){
-   			oLi[i].index = i;
-   			oLi[i].onmouseover = function(){
-   			for(var y=0;y<oLi.length;y++){
-   					removeClass(oLi[y],"li-nav-hover");
-   					removeClass(oLi[y],"li-current");
-   					oBox[y].style.display = "none";
-   				}
-   				addClass(this,"li-nav-hover");	
-   				oBox[this.index].style.display = "block";
-   			}
-   			oLi[i].onmouseout = function(){
-   				removeClass(this,"li-nav-hover");
-   				oBox[this.index].style.display === "block" && (addClass(oLi[this.index],"li-current"));
-   			}
-   		}	
-   })();
-   
-   (function serviceBox(){
-   		var serBox = document.getElementsByClassName("right-service")[0];
-   		var oBox = serBox.getElementsByClassName("service-box");
-   		var oLi = serBox.getElementsByClassName("service-z");
-   		
-   		
-   		for(var i=0;i<oLi.length;i++){
-   			oLi[i].index = i;
-   			oLi[i].onmouseover = function(){
-	   			for(var y=0;y<oLi.length;y++){
-	   					removeClass(oLi[y],"service-hover");
-	   					oBox[y].style.display = "none";
-   				}
-   				addClass(this,"service-hover");	
-   				oBox[this.index].style.display = "block";
-   				var oClose = oBox[this.index].getElementsByClassName("close")[0];
-   				oClose.index = this.index;
-   				oClose.onclick = function(){
-   					oBox[this.index].style.display = "none";
-   					removeClass(oLi[this.index],"service-hover");
-   				}
-   			}
-   		}
-   		
-   		
-   		
-   })();
+	}
+
+
+/**********leftbar*************/
+/*警示栏*/
+
+
+
+
 }

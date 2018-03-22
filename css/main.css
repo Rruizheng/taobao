@@ -949,7 +949,7 @@ body{
 	background: #FFF;
 	float: right;
     width: 290px;
-    height: 100%;
+    
     margin-top: 10px;
 }
 
@@ -1544,7 +1544,7 @@ body{
     text-align: center;
     margin: 0 11px;
 }
-.header-rightbar .right-info-box .right-tab-nav .li-nav-current{
+.header-rightbar .right-info-box .right-tab-nav .li-current{
 	padding: 0;
     font-weight: 700;
     border-bottom: 2px solid #F40;
@@ -1583,8 +1583,19 @@ body{
 	float: left;
     width: 71px;
     height: 75px;
-    border-left: 1px solid #f4f4f4;
-    border-top: 1px solid #f4f4f4;
+    border: 1px solid #f4f4f4;
+    border-bottom: transparent;
+    border-right: transparent;
+}
+
+.header-rightbar .right-service div.service-hover{
+	border-color: #F40;
+	border-right: 1px solid #F40;
+	border-bottom: 1px solid #FFF;
+	z-index: 99;
+	height: 73px;
+	position: relative;
+	overflow: hidden;
 }
 
 .header-rightbar .right-service div.service-cell a{
@@ -1646,13 +1657,12 @@ body{
 .service-box{
     position: absolute;
     bottom: 0px;
-    z-index: 2998;
+    z-index: 0;
     width: 268px;
     padding: 10px 10px;
-    height: 152px;
+    height: 136px;
     display: none;
-    border: 1px solid #eee;
-    border-top: 1px solid #ddd;
+    border: 1px solid #F40;
     background: #fff;
 }
 
@@ -1664,8 +1674,13 @@ body{
     border-bottom: 1px solid #f2f2f2;
 }
 .service-head a{
-    margin-right: 20px;
+	display: inline-block;
+    padding: 3px 1px;
 }
+#service-box-1 .service-head a{
+	padding: 3px 10px;
+}
+
 .service-head a:first-child{
     color: #ff4300;
 }
@@ -1678,10 +1693,19 @@ body{
     color: #9c9c9c;
 }
 .service-head span{
-    float: right;
-    margin-right: 4px;
+    display: block;
+    z-index: 5;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    font-size: 18px;
+    text-align: center;
+    color: #999;
+    background-color: #fff;
     cursor: pointer;
-    color: #ddd;
 }
 .service-head span:hover{
     color: #f40;
@@ -1698,6 +1722,11 @@ body{
 }
 
 /*applist*/
+.header-rightbar .right-app{
+	position: relative;
+	width: 290px;
+	height: 111px;
+} 
 .header-rightbar .right-app h3{
 	font-size: 14px;
     padding-left: 14px;
@@ -1725,8 +1754,347 @@ body{
     height: 32px;
     margin-right: 21px;
     margin-bottom: 8px;
+    cursor: pointer;
 }
 .header-rightbar .right-app ul li img{
 	width: 32px;
     height: 32px;
 }
+
+
+/*help*/
+.help{
+    width: 1190px;
+    height: 140px;
+    margin: auto;
+    padding-top: 40px;
+}
+/*help-info*/
+.help-info{
+    float: left;
+    width: 296.5px;
+    height: 95px;
+    border-right: 1px solid #eee;
+}
+.help-info:last-child{
+    border-right: none;
+}
+.help-info h1{
+    height: 40px;
+    line-height: 40px;
+}
+.help-text{
+    vertical-align: top;
+    font-size: 16px;
+    margin-left: 9px;
+    color: #3c3c3c;
+}
+.help-a{
+    color: #999;
+    display: inline-block;
+    margin: 10px 15px 0 5px;
+}
+/*footer*/
+.footer{
+    width: 100%;
+    height: 240px;
+    margin: 20px auto 0 auto; 
+    background: #FFF;
+    padding-bottom: 9px;
+}
+/*footer-left*/
+.footer-wrap{
+	width: 1190px;
+    height: 240px;    
+    margin: 0 auto;
+    font-family:
+tahoma, arial, "Hiragino Sans GB", 宋体, sans-serif
+;
+}
+/*tao-man*/
+
+/*footer-nav*/
+.footer-nav{
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px; 
+    padding-top: 7px;
+    margin-bottom: 8px;
+    line-height: 27px;
+	color: #dedede;
+	
+}
+.footer-nav > a{
+    margin: 0 3px;
+}
+
+/*about-tao*/
+.about-tao{
+    width: 100%;
+    height: 18px;
+    line-height: 18px;
+    padding-bottom: 8px;
+}
+.footer-wrap > p{
+	width: 100%;
+    height: 18px;
+    line-height: 18px;
+    padding-bottom: 8px;
+}
+
+.final{
+    margin-top: 10px;
+    background: #FFF;
+}
+
+.gray-text{
+	color: grey;
+}
+
+/***************悬浮菜单*****************/
+.xuanfu{
+	width: 50px;
+	height: 400px;
+	position: fixed;
+    top: 75px;
+    left: calc(50% + 600px);
+    display: block;
+    transition: none;
+    z-index: 99999999;
+}
+
+.xuanfu span{
+	position: absolute;
+    height: 36px;
+    width: 50px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 32px;
+    color: #ff7f13;
+    top: -18px;
+    right: 0;
+}
+.xuanfu a{
+	display: block;
+	width: 34px;
+    height: 44px;
+    position: relative;
+    text-decoration: none;
+    padding: 6px 8px 0;
+    background: #fff;
+    line-height: 17px;
+    font-size: 13px;
+    text-align:center;
+}
+.xuanfu a:after{
+	content: '';
+    border-bottom: 1px solid #efefef;
+    width: 34px;
+    position: absolute;
+    left: 8px;
+    bottom: -1px;
+    z-index: 1;
+}
+.xuanfu a:hover{
+	background-image: linear-gradient(135deg,#ff971b,#ff5000);
+	background-repeat: repeat-x;
+	color: #fff;
+	font-weight: 700;
+}
+.xuanfu .xuanfu-1{
+	color: #F40;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.xuanfu .xuanfu-2{
+	color: #F40;
+}
+.xuanfu .xuanfu-3{
+	color: #8d7afb;
+}
+.xuanfu .xuanfu-4{
+	color: #A8C001;
+}
+.xuanfu .xuanfu-5{
+	color: #F40;
+}
+.xuanfu .xuanfu-6 i{
+	width: 34px;
+	height: 20px;
+	line-height: 20px;
+	color: #999;
+}
+.xuanfu .xuanfu-7 i{
+	width: 34px;
+	height: 40px;
+	line-height: 40px;
+	font-style: normal;
+}
+.xuanfu .xuanfu-8{
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+.shenghuo{
+	width: 1190px;
+	height: 166px;
+	margin:10px auto 0 auto
+}
+.shenghuo img{
+	width: 1190px;
+	height: 166px;
+}
+
+/*******************爱逛好货*************************/
+.content-1{
+	width: 1190px;
+	height: 658px;
+	margin: 10px auto 0 auto;
+}
+.haohuo{
+	width: 590px;
+    float: left;
+    height: 658px;
+    background: #FFF;
+    
+}
+.aiguang{
+	width: 590px;
+    float: left;
+    margin-left: 10px;
+    height: 658px;
+    background: #FFF;
+}
+.content-1 .titlewrap{
+	width: 570px;
+	height: 24px;
+	line-height: 24px;
+	padding-left: 20px;
+	margin: 20px 0;
+	display: inline-block;
+}
+.content-1 .titlewrap img{
+	width: 74px;
+	height: 24px;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+.content-1 .titlewrap .fa-haohuo{
+	font-size: 20px;
+    margin: 0;
+    color: #ccc;
+    position: relative;
+    vertical-align: middle;
+}
+.content-1 .titlewrap .title-left{
+	height: 24px;
+	line-height: 24px;
+    color: #999;
+    font-weight: 400;
+  	vertical-align: middle;
+}
+.content-1 .titlewrap .title-right{
+    vertical-align: middle;
+    float: right;
+    margin-right: 20px;
+    line-height: 24px;
+    height: 24px;
+    font-size: 12px;
+    color: #999;
+    text-align: right;
+    cursor: pointer;
+}
+.content-1 .titlewrap .title-right i{
+	line-height: 24px;
+    height: 24px;
+    font-size: 14px;
+    width: 12px;
+    text-align: center;
+}
+.content-1 .thingshow{
+	overflow: hidden;
+	padding-left: 21px;
+}
+.content-1 .thingshow a{
+	display: block;
+	float: left;
+	width: 180px;
+	overflow: hidden;
+	margin: 0 4px 17px 0;
+	cursor: pointer;
+}
+.content-1 .thingshow a  .imgwrap{
+	background: #4f4f4f;
+	overflow: hidden;
+}
+.content-1 .thingshow a  .imgwrap img{
+	width: 100%;
+	height: 180px;
+	display: block;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+	transition: all .2s
+}
+.content-1 .thingshow a  .imgwrap img:hover{
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.content-1 .haohuo .thingshow a .info{
+	overflow: hidden;
+	padding: 0 4px 0 6px;
+}
+.content-1 .haohuo .thingshow a .info h4{
+	margin-top: 5px;
+    font-size: 16px;
+    height: 28px;
+    overflow: hidden;
+    line-height: 28px;
+    font-weight: normal;
+}
+.content-1 .haohuo .thingshow a .info p{
+    line-height: 24px;
+    color: #999;
+    font-size: 14px;
+    overflow: hidden;
+    height: 24px;
+}
+.content-1 .haohuo .thingshow a .info p.extra {
+    line-height: 22px;
+    height: 22px;
+    margin-top: 12px;
+    color: #35b1ff;
+}
+.content-1  .aiguang .thingshow p{
+	margin-top: 11px;
+    line-height: 22px;
+    height: 44px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #999;
+}
+.content-1  .aiguang .thingshow p:hover{
+    color: #F40;
+}
+.content-1  .aiguang .thingshow p i{
+	color: #ebebeb;
+    float: left;  
+    margin-right: 4px;
+    width: 14px;
+    height: 22px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+.content-1  .aiguang .thingshow div.extra p{
+    margin-left: 30px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    color: #999;	
+}
+.content-1  .aiguang .thingshow div.extra img{
+	width: 22px;
+    height: 22px;
+    display: inline-block;
+    border-radius: 50%;
+    float: left;
+} 
